@@ -15,13 +15,12 @@ explicit sign-off, recorded as an Owner item here before the edit is made.
 
 ## Code (Claude)
 
-- [ ] Slice 1 — item entry + computed coverages with plain-language rights
-      explanations and source links — *the product's wow moment; polish the
-      copy.*
 - [ ] Slice 2 — receipt capture + archival-quality photo storage via KeepCore
       — *thermal paper fades; the photo is the durable copy.*
-- [ ] Slice 3 — deadlines dashboard + 2-second search — *"where is the vacuum
-      receipt" is a core promise.*
+- [ ] Slice 3 — deadlines dashboard + 2-second search + reminder scheduling
+      through KeepCore (every coverage end date gets one; leads are already
+      stored per coverage) — *"where is the vacuum receipt" and "remind me
+      before it expires" are core promises.*
 - [ ] Slice 4 — claim/repair events + full ZIP export — *"your data, your
       iCloud" needs a working exit door.*
 - [ ] Slice 5 — CloudKit private-database sync — *models are CloudKit-shaped
@@ -30,11 +29,6 @@ explicit sign-off, recorded as an Owner item here before the edit is made.
       below must match the StoreKit config exactly.*
 - [ ] Slice 8 — onboarding, settings, empty states, accessibility, HU strings
       — *home market + the EU story in its own language.*
-- [ ] Write the String Catalog copy for every `explanationKey` in the bundled
-      rule sets, including the "general information, not legal advice"
-      disclaimer and each rule's documented simplifications (annex-goods
-      caveat for jótállás, calendar-day withdrawal counting) — *the rules
-      engine's credibility reaches users only through this copy.*
 - [ ] Add a rule-content re-verification checklist (re-check njt.hu,
       gesetze-im-internet.de, ris.bka.gv.at, EUR-Lex; bump `ruleSetVersion`
       and `contentVerified`) before every App Store release — *statutes
@@ -78,6 +72,14 @@ explicit sign-off, recorded as an Owner item here before the edit is made.
 
 ## Done
 
+- [x] Slice 1 — item entry + computed coverages: fast manual add with locale
+      prefill, LIVE "Your rights" preview in the form, detail screen with
+      countdown chips, plain-language explanations, official source links,
+      assumed-clock and skipped-rule notes, manual coverage editor, and
+      regeneration on edit that preserves manual coverages and lead
+      overrides — *the wow moment.* English copy for all nine explanation
+      keys plus the not-legal-advice disclaimer, guarded by a test that
+      fails if a rule ever ships without copy.
 - [x] Vet the four bundled rule files against their source links (Owner,
       2026-07-07) — *content approved as drafted, including the two-tier HU
       jótállás finding and all documented simplifications; files are now

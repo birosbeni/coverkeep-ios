@@ -9,7 +9,7 @@ import WarrantyRules
 struct CoverkeepApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ItemListView()
         }
         // Local store for now; CloudKit private-database sync is Slice 5.
         // The models are CloudKit-compatible from day one (see Models/).

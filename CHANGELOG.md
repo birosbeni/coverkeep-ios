@@ -2,6 +2,44 @@
 
 All notable changes to Coverkeep, one entry per vertical slice.
 
+## Slice 1 — Item entry + coverages (2026-07-07)
+
+### Added
+- Fast manual item entry: name is the only required field; country and
+  currency prefill from the locale, channel/category/dates are one tap.
+  Price parsing is locale-aware Decimal (Hungarian narrow-space grouping,
+  German comma decimals) — money is never Double.
+- **The wow moment**: a live "Your rights" section in the add/edit form —
+  computed coverages appear with end dates and countdown chips while the
+  user is still typing, before anything is saved.
+- Item detail screen: purchase facts (monospaced digits for dates and
+  amounts), and every coverage as a card with the green→amber→gray
+  countdown chip, date range, burden-of-proof note, plain-language
+  explanation, and official source links resolved live from the engine.
+- Plain-language English copy for all nine bundled explanation keys, the
+  "general information, not legal advice" disclaimer under every rights
+  list, honest notes for documented simplifications (calendar-day
+  counting, jótállás annex caveat), and skip-reason messages ("enter the
+  price to see whether a mandatory warranty applies"). A test fails if a
+  bundled rule ever ships without copy.
+- Delivery-date handling end to end: "Delivered later" toggle in the form;
+  coverages counted from the purchase date carry an amber "set the
+  delivery date if it arrived later" note.
+- Coverage editing: manual coverages (kind, dates, reminder lead) can be
+  added and edited; computed coverages expose only the reminder lead —
+  their dates come from the vetted rules. Editing purchase facts
+  regenerates computed coverages while preserving manual ones and
+  reminder-lead overrides (matched by rule ID).
+- Item list with nearest-deadline chip per row, empty state, swipe delete;
+  EU-fallback banner when a country has no vetted rule set.
+- 17 new app tests (rights copy coverage, deadline-status boundaries,
+  form model prefill/parsing/save/regeneration); 70 tests total across
+  package and app.
+
+### Changed
+- Reminder *scheduling* through KeepCore lands with Slice 3 (deadlines);
+  leads are already stored per coverage.
+
 ## Slice 0 — Skeleton + WarrantyRules engine (2026-07-07)
 
 ### Added

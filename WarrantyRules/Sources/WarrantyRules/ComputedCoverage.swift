@@ -23,6 +23,30 @@ public struct ComputedCoverage: Sendable, Equatable {
     /// date was available — the UI must invite the user to correct the
     /// delivery date.
     public let clockStartAssumed: Bool
+
+    public init(
+        kind: CoverageKind,
+        startDate: Date,
+        endDate: Date,
+        burdenOfProofEndDate: Date?,
+        ruleID: String,
+        ruleSetID: String,
+        ruleSetVersion: String,
+        explanationKey: String,
+        sources: [RuleSource],
+        clockStartAssumed: Bool
+    ) {
+        self.kind = kind
+        self.startDate = startDate
+        self.endDate = endDate
+        self.burdenOfProofEndDate = burdenOfProofEndDate
+        self.ruleID = ruleID
+        self.ruleSetID = ruleSetID
+        self.ruleSetVersion = ruleSetVersion
+        self.explanationKey = explanationKey
+        self.sources = sources
+        self.clockStartAssumed = clockStartAssumed
+    }
 }
 
 /// A price-banded rule the engine could not apply. Surfaced instead of
@@ -43,6 +67,13 @@ public struct SkippedRule: Sendable, Equatable {
     public let kind: CoverageKind
     public let reason: Reason
     public let explanationKey: String
+
+    public init(ruleID: String, kind: CoverageKind, reason: Reason, explanationKey: String) {
+        self.ruleID = ruleID
+        self.kind = kind
+        self.reason = reason
+        self.explanationKey = explanationKey
+    }
 }
 
 /// The full result of one computation: which rule set answered (and whether
