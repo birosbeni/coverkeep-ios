@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "ruleSetID": "EU",
+  "ruleSetVersion": "2026-07",
+  "contentVerified": "2026-07-07",
+  "rules": [
+    {
+      "id": "eu.legal-guarantee",
+      "kind": "legalGuarantee",
+      "channels": ["inStore", "online"],
+      "clockStart": "delivery",
+      "duration": { "months": 24 },
+      "burdenOfProof": { "months": 12 },
+      "explanationKey": "rule.eu.legalGuarantee",
+      "comment": "Directive MINIMUMS, used as the fallback for countries without a vetted rule set: 2-year seller liability from delivery (Art. 10(1)) and 1-year reversed burden of proof (Art. 11(1); member states may keep or introduce 2 years). Cross-checked against the official Your Europe summary on 2026-07-07. Copy must say national law can be more generous.",
+      "sources": [
+        {
+          "title": "Directive (EU) 2019/771, Art. 10–11",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0771"
+        },
+        {
+          "title": "Your Europe — Consumer guarantees",
+          "url": "https://europa.eu/youreurope/citizens/consumers/shopping/guarantees-returns/index_en.htm"
+        }
+      ]
+    },
+    {
+      "id": "eu.withdrawal",
+      "kind": "withdrawal",
+      "channels": ["online"],
+      "clockStart": "delivery",
+      "duration": { "days": 14 },
+      "explanationKey": "rule.eu.withdrawal",
+      "comment": "14 days from the day the consumer acquires physical possession of the goods (Art. 9(1), 9(2)(b)); cross-checked against the official Your Europe summary on 2026-07-07. Documented simplifications: (1) exemptions exist (personalised goods, unsealed hygiene goods, etc.) — copy must note them; (2) the deadline extension to the next working day when it falls on a weekend/holiday (Regulation 1182/71) is not modelled — v1 counts calendar days.",
+      "sources": [
+        {
+          "title": "Directive 2011/83/EU, Art. 9",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32011L0083"
+        },
+        {
+          "title": "Your Europe — Returns and refunds",
+          "url": "https://europa.eu/youreurope/citizens/consumers/shopping/shopping-consumer-rights/index_en.htm"
+        }
+      ]
+    }
+  ]
+}

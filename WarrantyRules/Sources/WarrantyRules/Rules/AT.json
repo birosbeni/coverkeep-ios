@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "ruleSetID": "AT",
+  "ruleSetVersion": "2026-07",
+  "contentVerified": "2026-07-07",
+  "rules": [
+    {
+      "id": "at.legal-guarantee",
+      "kind": "legalGuarantee",
+      "channels": ["inStore", "online"],
+      "clockStart": "delivery",
+      "duration": { "months": 24 },
+      "burdenOfProof": { "months": 12 },
+      "explanationKey": "rule.at.legalGuarantee",
+      "comment": "Gewährleistung under the VGG (BGBl. I Nr. 175/2021). Verified VERBATIM on ris.bka.gv.at, 2026-07-07 — § 10 (1): 'Der Unternehmer leistet Gewähr für jeden Mangel, der bei Übergabe der Ware vorliegt und innerhalb von zwei Jahren nach diesem Zeitpunkt hervorkommt.' § 11 (1): presumption for defects 'innerhalb eines Jahres nach Übergabe der Ware'. Un-modelled consumer-favorable nuance: claims remain enforceable a further three months after the Gewährleistungsfrist ends ('drei Monate nach Ablauf der jeweiligen Gewährleistungsfrist', § 28) — copy may mention it.",
+      "sources": [
+        {
+          "title": "Verbrauchergewährleistungsgesetz (VGG) §§ 10–11",
+          "url": "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20011654"
+        }
+      ]
+    },
+    {
+      "id": "at.withdrawal",
+      "kind": "withdrawal",
+      "channels": ["online"],
+      "clockStart": "delivery",
+      "duration": { "days": 14 },
+      "explanationKey": "rule.at.withdrawal",
+      "comment": "Rücktrittsrecht. Verified VERBATIM against FAGG § 11 on ris.bka.gv.at, 2026-07-07 — (1): withdrawal 'binnen 14 Tagen ohne Angabe von Gründen'; (2) 2. a): for goods the period starts 'mit dem Tag, an dem der Verbraucher ... den Besitz an der Ware erlangt'. Same calendar-day simplification as the EU rule.",
+      "sources": [
+        {
+          "title": "Fern- und Auswärtsgeschäfte-Gesetz (FAGG) § 11",
+          "url": "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20008847"
+        }
+      ]
+    }
+  ]
+}

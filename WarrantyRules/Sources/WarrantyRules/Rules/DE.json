@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "ruleSetID": "DE",
+  "ruleSetVersion": "2026-07",
+  "contentVerified": "2026-07-07",
+  "rules": [
+    {
+      "id": "de.legal-guarantee",
+      "kind": "legalGuarantee",
+      "channels": ["inStore", "online"],
+      "clockStart": "delivery",
+      "duration": { "months": 24 },
+      "burdenOfProof": { "months": 12 },
+      "explanationKey": "rule.de.legalGuarantee",
+      "comment": "Mängelhaftung. Limitation verified VERBATIM against BGB § 438 on gesetze-im-internet.de, 2026-07-07: 'im Übrigen in zwei Jahren', running 'mit der Ablieferung der Sache'. Presumption verified VERBATIM against § 477 (1): a deviating condition 'innerhalb eines Jahres seit Gefahrübergang' is presumed to have existed at Gefahrübergang (live animals: six months — not modelled).",
+      "sources": [
+        {
+          "title": "BGB § 438 — Verjährung der Mängelansprüche",
+          "url": "https://www.gesetze-im-internet.de/bgb/__438.html"
+        },
+        {
+          "title": "BGB § 477 — Beweislastumkehr",
+          "url": "https://www.gesetze-im-internet.de/bgb/__477.html"
+        }
+      ]
+    },
+    {
+      "id": "de.withdrawal",
+      "kind": "withdrawal",
+      "channels": ["online"],
+      "clockStart": "delivery",
+      "duration": { "days": 14 },
+      "explanationKey": "rule.de.withdrawal",
+      "comment": "Widerrufsrecht bei Fernabsatzverträgen: 14 days (§ 355 (2)); for consumer sales of goods the period starts when the consumer or their designee receives the goods (§ 356 (2) 1.). Same calendar-day simplification as the EU rule.",
+      "sources": [
+        {
+          "title": "BGB § 312g — Widerrufsrecht",
+          "url": "https://www.gesetze-im-internet.de/bgb/__312g.html"
+        },
+        {
+          "title": "BGB § 355 — Widerrufsrecht bei Verbraucherverträgen",
+          "url": "https://www.gesetze-im-internet.de/bgb/__355.html"
+        },
+        {
+          "title": "BGB § 356 — Widerrufsrecht bei Verbraucherverträgen (Fristbeginn)",
+          "url": "https://www.gesetze-im-internet.de/bgb/__356.html"
+        }
+      ]
+    }
+  ]
+}
