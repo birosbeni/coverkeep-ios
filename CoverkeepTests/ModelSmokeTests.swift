@@ -11,7 +11,7 @@ struct ModelSmokeTests {
     private func makeContainer() throws -> ModelContainer {
         let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
         return try ModelContainer(
-            for: Item.self, Receipt.self, Coverage.self, Event.self,
+            for: Item.self, Receipt.self, ReceiptPage.self, Coverage.self, Event.self,
             configurations: configuration
         )
     }

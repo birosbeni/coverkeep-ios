@@ -40,6 +40,13 @@ struct ItemListView: View {
                 ItemDetailView(item: item)
             }
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    NavigationLink {
+                        ReceiptBrowserView()
+                    } label: {
+                        Label("Receipts", systemImage: "doc.text.image")
+                    }
+                }
                 ToolbarItem(placement: .primaryAction) {
                     Button("Add Item", systemImage: "plus") {
                         showingNewItem = true

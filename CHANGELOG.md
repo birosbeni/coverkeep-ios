@@ -2,6 +2,32 @@
 
 All notable changes to Coverkeep, one entry per vertical slice.
 
+## Slice 2 — Receipt capture + archive (2026-07-08)
+
+### Added
+- Receipt capture on the item detail screen through KeepCore's attachment
+  pipeline: camera, photo library, and PDF import, with multi-page
+  receipts as one ordered document (long thermal rolls photographed in
+  sections stay together).
+- **The archival promise, enforced**: library picks and PDFs persist
+  byte-for-byte (`ReceiptPage.data` with external storage, verified by a
+  byte-fidelity test); camera captures are encoded once at JPEG 0.95.
+  KeepCore gained a non-breaking `compressionQuality` parameter on
+  `CameraPicker`/`AttachmentsEditor` (default unchanged at 0.8) rather
+  than an app-local reimplementation.
+- Receipts presented like archived documents: paper-framed first-page
+  thumbnails with label, date, and page count — on the item and in a new
+  all-receipts browser grid ("where is the vacuum receipt").
+- Full-screen viewing via QuickLook: system zoom for thermal-paper fine
+  print, built-in page swiping, PDF rendering, and sharing. Pages are
+  materialized to a private temp directory and removed on dismissal.
+- Receipt editing (add/remove/reorder pages, relabel) replaces pages
+  wholesale with no orphaned rows; cascade deletes verified item →
+  receipt → pages.
+- `NSCameraUsageDescription` added to the generated Info.plist.
+- 7 new receipt tests; 27 app + 50 package tests green. Store migration
+  from the Slice 1 schema verified by launching over the previous install.
+
 ## Slice 1 — Item entry + coverages (2026-07-07)
 
 ### Added

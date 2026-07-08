@@ -16,6 +16,9 @@ struct ItemDetailView: View {
     @State private var editingCoverage: Coverage?
     @State private var addingCoverage = false
     @State private var confirmingDelete = false
+    @State private var addingReceipt = false
+    @State private var editingReceipt: Receipt?
+    @State private var viewedReceipt: Receipt?
 
     private var sortedCoverages: [Coverage] {
         (item.coverages ?? []).sorted { $0.endDate < $1.endDate }
@@ -31,6 +34,7 @@ struct ItemDetailView: View {
     var body: some View {
         List {
             detailsSection
+            receiptsSection
             rightsSection
         }
         .navigationTitle(item.name)
@@ -39,6 +43,9 @@ struct ItemDetailView: View {
             ToolbarItem(placement: .primaryAction) {
                 Menu {
                     Button("Edit Item", systemImage: "pencil") { showingEdit = true }
+                    Button("Add Receipt", systemImage: "doc.viewfinder") {
+                        addingReceipt = true
+                    }
                     Button("Add Coverage", systemImage: "plus.shield.checkered") {
                         addingCoverage = true
                     }
@@ -59,6 +66,16 @@ struct ItemDetailView: View {
         }
         .sheet(isPresented: $addingCoverage) {
             CoverageEditorView(item: item, editedCoverage: nil)
+        }
+        .sheet(isPresented: $addingReceipt) {
+            ReceiptFormView(item: item)
+        }
+        .sheet(item: $editingReceipt) { receipt in
+            ReceiptFormView(item: item, receipt: receipt)
+        }
+        .sheet(item: $viewedReceipt) { receipt in
+            ReceiptQuickLook(receipt: receipt)
+                .ignoresSafeArea()
         }
         .confirmationDialog(
             "Delete this item and everything attached to it?",
@@ -116,6 +133,43 @@ struct ItemDetailView: View {
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
+        }
+    }
+
+    private var receiptsSection: some View {
+        Section {
+            let receipts = (item.receipts ?? []).sorted { $0.createdAt < $1.createdAt }
+            if receipts.isEmpty {
+                Button {
+                    addingReceipt = true
+                } label: {
+                    Label("Photograph the receipt before it fades", systemImage: "doc.viewfinder")
+                }
+            } else {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(alignment: .top, spacing: 16) {
+                        ForEach(receipts) { receipt in
+                            Button {
+                                viewedReceipt = receipt
+                            } label: {
+                                ReceiptCard(receipt: receipt)
+                            }
+                            .buttonStyle(.plain)
+                            .contextMenu {
+                                Button("Edit", systemImage: "pencil") {
+                                    editingReceipt = receipt
+                                }
+                                Button("Delete", systemImage: "trash", role: .destructive) {
+                                    modelContext.delete(receipt)
+                                }
+                            }
+                        }
+                    }
+                    .padding(.vertical, 4)
+                }
+            }
+        } header: {
+            Text("Receipts")
         }
     }
 

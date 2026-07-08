@@ -38,6 +38,7 @@ targets:
         CURRENT_PROJECT_VERSION: 1
         MARKETING_VERSION: 0.1.0
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_NSCameraUsageDescription: Coverkeep photographs your receipts so you keep a durable, full-quality copy before the paper fades.
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: UIInterfaceOrientationPortrait
         # No networking beyond StoreKit/CloudKit — standard exemption.
         INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO

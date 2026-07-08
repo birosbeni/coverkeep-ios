@@ -12,13 +12,19 @@
 		217C081A4F2D2E3B55D0076A /* ItemFormModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24244C36A15295669E6E075 /* ItemFormModelTests.swift */; };
 		21EAD15346A863A620AA4AB8 /* WarrantyRules in Frameworks */ = {isa = PBXBuildFile; productRef = A807502DBC771093247A5165 /* WarrantyRules */; };
 		23156E9857DF73D1B054DBA8 /* ItemFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B1B537A5DF2A06053D3987 /* ItemFormView.swift */; };
+		30CAD2E55595858076E3D4E6 /* ReceiptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8A9BE2235264575AE3D012 /* ReceiptTests.swift */; };
 		34956CF8FFCA254A94FE47EC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C69889A6FDF48AC5FEB46CC8 /* Localizable.xcstrings */; };
+		3611FA4BBEDFE22664B7FE40 /* ReceiptFormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9731C85CC60D97B4A0EBC1A /* ReceiptFormModel.swift */; };
 		3A91277811594A3322C1D37E /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5AC9EA0AD8F68830A5644D /* ItemCategory.swift */; };
 		3EC55F1156F4D5FA1FF1184B /* CoverageEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78E1B9D39B97647AC5D1036 /* CoverageEditorView.swift */; };
 		3F01A0AB71138D1E6750E46D /* CountryOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA7F43651F8A37314176AFF /* CountryOptions.swift */; };
+		4625EB9C2142AF61E309D0C1 /* ReceiptFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6000EC7BDF8F0266C3F2ACBB /* ReceiptFormView.swift */; };
+		4E7B97D1CE42F463EA5FFEF7 /* ReceiptViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE4B22B71B00D977909198 /* ReceiptViews.swift */; };
 		539B45F2FBF66F5DC077E3AA /* CoverageDerivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8622B86A4D1077D4948D81 /* CoverageDerivation.swift */; };
 		714B9AE2CBCF815B07D0527A /* WarrantyRules in Frameworks */ = {isa = PBXBuildFile; productRef = E1836ED819955C3893BCB8C0 /* WarrantyRules */; };
+		74D8F3BCA898462A28388C50 /* ReceiptBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A853D066429B70988A3D9B7 /* ReceiptBrowserView.swift */; };
 		7BE2C08D80BD21231F38DC94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0E384C572BD337C0C8113E6 /* Assets.xcassets */; };
+		843D018B2CFB11414EDF66FF /* ReceiptQuickLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534BAD5D0E46FECF344E52C /* ReceiptQuickLook.swift */; };
 		8627EEA2E63E09546C6D7119 /* RightsCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1517B1B1B3451BFA61630B6F /* RightsCopy.swift */; };
 		89879855128744A7C7B334E1 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5E3058D20CB4A70E6BC1B0 /* ItemDetailView.swift */; };
 		9135794686C029A5CAE41AC4 /* WarrantyEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4828D438602EE97E35A9770 /* WarrantyEngine.swift */; };
@@ -27,6 +33,7 @@
 		B1E5E1FF540D51011ACF45DC /* ModelSmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A3E64C157E65E05FEA289 /* ModelSmokeTests.swift */; };
 		BA0443992BC6D58F194D5EB1 /* RightsCopyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531CC5AA0F2050536A6997D /* RightsCopyTests.swift */; };
 		BBDE56D524A7CE0723A21F32 /* CoverageViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C52D25EF274212CBAA9542 /* CoverageViews.swift */; };
+		C4C43005E7136E0679EDD356 /* ReceiptPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E4B05E2B4DFEDE62DEC871 /* ReceiptPage.swift */; };
 		CDCB6ABE7AA6499F01B9F0C1 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB25928B389296BE110A7F6F /* Event.swift */; };
 		CEAE3A9EDE7E35F3EFC88FD7 /* DeadlineStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A56EB42C4D30C47E93057E /* DeadlineStatus.swift */; };
 		D5AAF8648A3CCCBEEB8DD2C7 /* Coverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD12B8B2DCF408E355133D5 /* Coverage.swift */; };
@@ -50,16 +57,21 @@
 		01B1B537A5DF2A06053D3987 /* ItemFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFormView.swift; sourceTree = "<group>"; };
 		0531CC5AA0F2050536A6997D /* RightsCopyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightsCopyTests.swift; sourceTree = "<group>"; };
 		1517B1B1B3451BFA61630B6F /* RightsCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightsCopy.swift; sourceTree = "<group>"; };
+		1A853D066429B70988A3D9B7 /* ReceiptBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptBrowserView.swift; sourceTree = "<group>"; };
 		1DB600CF7C49639F900BAB33 /* DeadlineStatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlineStatusTests.swift; sourceTree = "<group>"; };
 		2DD12B8B2DCF408E355133D5 /* Coverage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coverage.swift; sourceTree = "<group>"; };
+		32E4B05E2B4DFEDE62DEC871 /* ReceiptPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptPage.swift; sourceTree = "<group>"; };
 		3DB6C9245C5D0B9E3F2E77E4 /* Coverkeep.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Coverkeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4534BAD5D0E46FECF344E52C /* ReceiptQuickLook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptQuickLook.swift; sourceTree = "<group>"; };
 		4CFEBF0200BC255AB563634B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		6000EC7BDF8F0266C3F2ACBB /* ReceiptFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptFormView.swift; sourceTree = "<group>"; };
 		6A5AC9EA0AD8F68830A5644D /* ItemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
 		6EA7F43651F8A37314176AFF /* CountryOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryOptions.swift; sourceTree = "<group>"; };
 		73421D5689D63175043399B7 /* ItemFormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFormModel.swift; sourceTree = "<group>"; };
 		788A6396D831C0508BB28FDF /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		7A8622B86A4D1077D4948D81 /* CoverageDerivation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverageDerivation.swift; sourceTree = "<group>"; };
 		7BCAD5B06D287F174CAC8D94 /* Receipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
+		99FE4B22B71B00D977909198 /* ReceiptViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViews.swift; sourceTree = "<group>"; };
 		A0E384C572BD337C0C8113E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A20E919D24A11F527850B865 /* CoverkeepTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CoverkeepTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75BE94AC3A0A0B7B8688F96 /* WarrantyRules */ = {isa = PBXFileReference; lastKnownFileType = folder; name = WarrantyRules; path = WarrantyRules; sourceTree = SOURCE_ROOT; };
@@ -71,7 +83,9 @@
 		C69889A6FDF48AC5FEB46CC8 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		D24244C36A15295669E6E075 /* ItemFormModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFormModelTests.swift; sourceTree = "<group>"; };
 		D2C52D25EF274212CBAA9542 /* CoverageViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverageViews.swift; sourceTree = "<group>"; };
+		D9731C85CC60D97B4A0EBC1A /* ReceiptFormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptFormModel.swift; sourceTree = "<group>"; };
 		DFBE98F1FA6D992756ABD4E9 /* keepcore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = keepcore; path = ../keepcore; sourceTree = SOURCE_ROOT; };
+		EB8A9BE2235264575AE3D012 /* ReceiptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptTests.swift; sourceTree = "<group>"; };
 		EF5E3058D20CB4A70E6BC1B0 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		F2A56EB42C4D30C47E93057E /* DeadlineStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlineStatus.swift; sourceTree = "<group>"; };
 		F81564BE04E309DA4F29EDE8 /* CoverkeepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverkeepApp.swift; sourceTree = "<group>"; };
@@ -98,6 +112,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11A7E498C4DB8C02F9A0D597 /* Receipts */ = {
+			isa = PBXGroup;
+			children = (
+				1A853D066429B70988A3D9B7 /* ReceiptBrowserView.swift */,
+				D9731C85CC60D97B4A0EBC1A /* ReceiptFormModel.swift */,
+				6000EC7BDF8F0266C3F2ACBB /* ReceiptFormView.swift */,
+				4534BAD5D0E46FECF344E52C /* ReceiptQuickLook.swift */,
+				99FE4B22B71B00D977909198 /* ReceiptViews.swift */,
+			);
+			path = Receipts;
+			sourceTree = "<group>";
+		};
 		294F404E80DEEBC736199FE7 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				4B240EFA1727FE0BD3258347 /* Items */,
+				11A7E498C4DB8C02F9A0D597 /* Receipts */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -165,6 +192,7 @@
 				1DB600CF7C49639F900BAB33 /* DeadlineStatusTests.swift */,
 				D24244C36A15295669E6E075 /* ItemFormModelTests.swift */,
 				B38A3E64C157E65E05FEA289 /* ModelSmokeTests.swift */,
+				EB8A9BE2235264575AE3D012 /* ReceiptTests.swift */,
 				0531CC5AA0F2050536A6997D /* RightsCopyTests.swift */,
 			);
 			path = CoverkeepTests;
@@ -192,6 +220,7 @@
 				BC5A074B700F7E000F8E0165 /* Item.swift */,
 				6A5AC9EA0AD8F68830A5644D /* ItemCategory.swift */,
 				7BCAD5B06D287F174CAC8D94 /* Receipt.swift */,
+				32E4B05E2B4DFEDE62DEC871 /* ReceiptPage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -304,6 +333,7 @@
 				98DD411466D9352C1703DA8B /* DeadlineStatusTests.swift in Sources */,
 				217C081A4F2D2E3B55D0076A /* ItemFormModelTests.swift in Sources */,
 				B1E5E1FF540D51011ACF45DC /* ModelSmokeTests.swift in Sources */,
+				30CAD2E55595858076E3D4E6 /* ReceiptTests.swift in Sources */,
 				BA0443992BC6D58F194D5EB1 /* RightsCopyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,6 +357,12 @@
 				23156E9857DF73D1B054DBA8 /* ItemFormView.swift in Sources */,
 				9FE92C56F37AF9CCA2B5A22B /* ItemListView.swift in Sources */,
 				F0E9D3B91254ED2EEF366CD4 /* Receipt.swift in Sources */,
+				74D8F3BCA898462A28388C50 /* ReceiptBrowserView.swift in Sources */,
+				3611FA4BBEDFE22664B7FE40 /* ReceiptFormModel.swift in Sources */,
+				4625EB9C2142AF61E309D0C1 /* ReceiptFormView.swift in Sources */,
+				C4C43005E7136E0679EDD356 /* ReceiptPage.swift in Sources */,
+				843D018B2CFB11414EDF66FF /* ReceiptQuickLook.swift in Sources */,
+				4E7B97D1CE42F463EA5FFEF7 /* ReceiptViews.swift in Sources */,
 				8627EEA2E63E09546C6D7119 /* RightsCopy.swift in Sources */,
 				9135794686C029A5CAE41AC4 /* WarrantyEngine.swift in Sources */,
 			);
@@ -444,6 +480,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Coverkeep photographs your receipts so you keep a durable, full-quality copy before the paper fades.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -466,6 +503,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Coverkeep photographs your receipts so you keep a durable, full-quality copy before the paper fades.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (

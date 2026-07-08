@@ -15,8 +15,6 @@ explicit sign-off, recorded as an Owner item here before the edit is made.
 
 ## Code (Claude)
 
-- [ ] Slice 2 — receipt capture + archival-quality photo storage via KeepCore
-      — *thermal paper fades; the photo is the durable copy.*
 - [ ] Slice 3 — deadlines dashboard + 2-second search + reminder scheduling
       through KeepCore (every coverage end date gets one; leads are already
       stored per coverage) — *"where is the vacuum receipt" and "remind me
@@ -72,6 +70,13 @@ explicit sign-off, recorded as an Owner item here before the edit is made.
 
 ## Done
 
+- [x] Slice 2 — receipt capture + archive: multi-page receipts (camera /
+      photo library / PDF via KeepCore's AttachmentsEditor), byte-for-byte
+      external storage with camera captures at archival quality (KeepCore
+      gained a non-breaking compressionQuality parameter), paper-framed
+      document cards, QuickLook viewing with zoom/share, and the
+      all-receipts browser — *thermal paper fades; the photo is the durable
+      copy.*
 - [x] Slice 1 — item entry + computed coverages: fast manual add with locale
       prefill, LIVE "Your rights" preview in the form, detail screen with
       countdown chips, plain-language explanations, official source links,

@@ -21,7 +21,7 @@ struct ItemFormModelTests {
     private func makeContext() throws -> ModelContext {
         let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(
-            for: Item.self, Receipt.self, Coverage.self, Event.self,
+            for: Item.self, Receipt.self, ReceiptPage.self, Coverage.self, Event.self,
             configurations: configuration
         )
         return ModelContext(container)
