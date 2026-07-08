@@ -15,10 +15,11 @@ explicit sign-off, recorded as an Owner item here before the edit is made.
 
 ## Code (Claude)
 
-- [ ] Slice 5 — CloudKit private-database sync — *models are CloudKit-shaped
-      from Slice 0; this turns it on.*
-- [ ] Slice 6 — paywall via KeepCore (free: 10 items full-featured) — *IDs
-      below must match the StoreKit config exactly.*
+- [ ] Slice 5 — CloudKit private-database sync — **deferred by owner
+      decision (2026-07-08) until Developer enrollment lands**; then done in
+      one pass (entitlement + container `iCloud.com.birosbenedek.coverkeep`
+      + ModelConfiguration + two-device sync test). Models are
+      CloudKit-shaped from Slice 0.
 - [ ] Slice 8 — onboarding, settings, empty states, accessibility, HU strings
       — *home market + the EU story in its own language.*
 - [ ] Add a rule-content re-verification checklist (re-check njt.hu,
@@ -40,20 +41,22 @@ explicit sign-off, recorded as an Owner item here before the edit is made.
 - [ ] Multi-device CloudKit sync test after Slice 5 (two devices, same Apple
       ID) — *the only sync behavior that can't be verified without a paid
       team.*
-- [ ] Register the app's domain; host `/privacy` (and optionally `/terms`)
-      plus a landing page — *the in-app Privacy Policy link and the App Store
-      privacy URL must resolve.*
+- [ ] Register `coverkeep.app`; host `/privacy` (and optionally `/terms`)
+      plus a landing page — *the in-app links (Settings, paywall) point at
+      `https://coverkeep.app/privacy` and `/terms` and must resolve for App
+      Review.*
 - [ ] Accept the Paid Applications agreement (App Store Connect → Agreements,
       Tax, and Banking) — *subscriptions don't work at all without it, even
       in TestFlight.*
 - [ ] Create the app record (bundle ID `com.birosbenedek.coverkeep`) —
       *container for builds, IAP, and metadata.*
 - [ ] Create the IAP products, exact IDs and prices: subscription group
-      "Coverkeep" with `com.birosbenedek.coverkeep.annual` (~€14.99/yr,
-      preselected in-app) and `com.birosbenedek.coverkeep.monthly` (~€1.99/mo),
-      plus non-consumable `com.birosbenedek.coverkeep.lifetime` (~€34.99) —
-      *IDs must match the StoreKit configuration or the paywall loads nothing
-      in production.*
+      "Coverkeep Pro" with `com.birosbenedek.coverkeep.pro.annual`
+      (€14.99/yr, preselected in-app) and
+      `com.birosbenedek.coverkeep.pro.monthly` (€1.99/mo), plus
+      non-consumable `com.birosbenedek.coverkeep.pro.lifetime` (€34.99) —
+      *IDs must match `Coverkeep.storekit` exactly (a test guards the
+      code↔config pairing) or the paywall loads nothing in production.*
 - [ ] Apply to the App Store Small Business Program BEFORE launch — *15%
       commission instead of 30%; must be approved before revenue starts.*
 - [ ] App Privacy questionnaire: "Data Not Collected" — *truthful (no

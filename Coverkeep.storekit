@@ -1,0 +1,91 @@
+{
+  "identifier" : "C0VE4KEE-0000-4000-9000-COVERKEEP001",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "34.99",
+      "familyShareable" : false,
+      "internalID" : "C0VE4KEE-0000-4000-9000-COVERKEEP002",
+      "localizations" : [
+        {
+          "description" : "Unlimited items, forever. One purchase.",
+          "displayName" : "Coverkeep Pro — Lifetime",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.birosbenedek.coverkeep.pro.lifetime",
+      "referenceName" : "Pro Lifetime",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21000002",
+      "localizations" : [
+
+      ],
+      "name" : "Coverkeep Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "14.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "C0VE4KEE-0000-4000-9000-COVERKEEP003",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Unlimited items in your vault.",
+              "displayName" : "Coverkeep Pro — Annual",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.birosbenedek.coverkeep.pro.annual",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Pro Annual",
+          "subscriptionGroupID" : "21000002",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "1.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "C0VE4KEE-0000-4000-9000-COVERKEEP004",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Unlimited items in your vault.",
+              "displayName" : "Coverkeep Pro — Monthly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.birosbenedek.coverkeep.pro.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Pro Monthly",
+          "subscriptionGroupID" : "21000002",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

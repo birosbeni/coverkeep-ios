@@ -64,6 +64,8 @@ schemes:
     build:
       targets:
         Coverkeep: all
+    run:
+      storeKitConfiguration: Coverkeep.storekit
     test:
       targets:
         - CoverkeepTests

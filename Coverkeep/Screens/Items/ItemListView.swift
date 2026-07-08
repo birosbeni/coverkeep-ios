@@ -8,11 +8,13 @@ import KeepCore
 struct ItemListView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(ReminderSync.self) private var reminderSync
+    @Environment(PurchaseManager.self) private var purchases
     @Environment(\.scenePhase) private var scenePhase
     @Query(filter: #Predicate<Item> { !$0.archived }, sort: \Item.createdAt, order: .reverse)
     private var items: [Item]
 
     @State private var showingNewItem = false
+    @State private var showingPaywall = false
     @State private var searchText = ""
     @State private var categoryFilter: ItemCategory?
     @State private var exportArchive: ExportArchive?
@@ -66,7 +68,7 @@ struct ItemListView: View {
                 }
                 ToolbarItem(placement: .primaryAction) {
                     Button("Add Item", systemImage: "plus") {
-                        showingNewItem = true
+                        requestNewItem()
                     }
                 }
                 if !items.isEmpty {
@@ -79,6 +81,9 @@ struct ItemListView: View {
             }
             .sheet(isPresented: $showingNewItem) {
                 ItemFormView()
+            }
+            .sheet(isPresented: $showingPaywall) {
+                PaywallView()
             }
             .sheet(item: $exportArchive, onDismiss: cleanUpExport) { archive in
                 ShareSheet(items: [archive.url])
@@ -193,8 +198,23 @@ struct ItemListView: View {
         } description: {
             Text("Add a purchase to see your warranty rights and deadlines — it takes 30 seconds.")
         } actions: {
-            Button("Add Item") { showingNewItem = true }
+            Button("Add Item") { requestNewItem() }
                 .buttonStyle(.borderedProminent)
+        }
+    }
+
+    /// The one gated creation point (CLAUDE.md Slice 6: free = 10 items,
+    /// full-featured). Archived items count — the total is fetched fresh,
+    /// not taken from the filtered query. While the launch entitlement
+    /// check is still running we let the add through rather than flash a
+    /// paywall at a paying user.
+    private func requestNewItem() {
+        let count = (try? modelContext.fetchCount(FetchDescriptor<Item>())) ?? 0
+        let entitled = purchases.isEntitled || purchases.isLoadingEntitlement
+        if FreeTier.canCreateItem(existingItemCount: count, isEntitled: entitled) {
+            showingNewItem = true
+        } else {
+            showingPaywall = true
         }
     }
 
@@ -283,4 +303,5 @@ struct ItemRow: View {
     ItemListView()
         .modelContainer(for: [Item.self], inMemory: true)
         .environment(ReminderSync())
+        .environment(PurchaseManager(productIDs: CoverkeepProducts.ids))
 }

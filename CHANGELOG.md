@@ -2,6 +2,34 @@
 
 All notable changes to Coverkeep, one entry per vertical slice.
 
+## Slice 6 — Monetization (2026-07-08)
+
+Slice 5 (CloudKit sync) is deferred by owner decision: blocked on Apple
+Developer enrollment, to be done in one pass when the entitlement can be
+provisioned and sync-tested. Monetization runs fully against a local
+StoreKit configuration, so it lands first.
+
+### Added
+- **Coverkeep Pro** via KeepCore's StoreKit 2 `PurchaseManager`: annual
+  €14.99 (preselected, "best value"), monthly €1.99, lifetime €34.99 —
+  product IDs `com.birosbenedek.coverkeep.pro.{annual,monthly,lifetime}`
+  in a subscription group plus a non-consumable. A test guards that the
+  IDs in code appear verbatim in `Coverkeep.storekit`.
+- **Free tier ("hard-ish paywall")**: 10 items, FULL-featured — receipts,
+  coverages, events, reminders, search, and export all work on every
+  item. Only creating the 11th item is gated; archived items count toward
+  the limit (archiving is organization, not a slot-freeing trick).
+  Existing data is never locked away.
+- **PaywallView**: benefits (unlimited items, EU rights on every item,
+  no account/no server, export always free), live products with localized
+  prices, restore purchases, renewal disclosure, privacy/terms links;
+  dismissible — it blocks the action, not the app. While the launch
+  entitlement check is still running, adds pass through rather than
+  flashing the paywall at a paying user.
+- `Coverkeep.storekit` wired into the run scheme, so purchases are fully
+  testable in the simulator before any App Store record exists.
+- 3 new tests; 47 app + 50 package tests green.
+
 ## Slice 4 — Events + export (2026-07-08)
 
 ### Added
