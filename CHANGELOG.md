@@ -2,6 +2,41 @@
 
 All notable changes to Coverkeep, one entry per vertical slice.
 
+## Slice 8 — TestFlight polish (2026-07-08)
+
+Slice 7 (OCR/AI capture) remains 🔒 hard-gated on the owner's receipt
+corpus and is untouched.
+
+### Added
+- **Onboarding**: first-run walkthrough in four beats — Europe's rules
+  built in, receipts that don't fade, reminded before it's too late,
+  yours entirely — closing with the not-legal-advice disclaimer. Shown
+  once (KeepCore's shared onboarding flag).
+- **Settings**: Pro status / upgrade / restore; notification health with
+  a "Turn on in Settings" path when denied; the bundled rule sets listed
+  with their `contentVerified` dates (the credibility trail, surfaced to
+  users); data-ownership note; Privacy Policy + Terms links; version.
+- **Hungarian localization**: all 159 user-facing strings, including the
+  nine rights explanations, notification copy, onboarding, and paywall.
+  `SWIFT_EMIT_LOC_STRINGS` enabled; keys enumerated via
+  `xcodebuild -exportLocalizations`; `hu.lproj` verified in the bundle.
+  Tests guard that every bundled rule explanation has HU copy, that the
+  jótállás copy states the vetted two-tier thresholds, and that the HU
+  disclaimer exists. Camera permission prompt localized via
+  `InfoPlist.xcstrings`. HU rights copy queued for owner vetting
+  (TODO.md).
+- **Placeholder app icon**, programmatically generated (CoreGraphics
+  script, same approach as Sawkeep/Realmkeep): paper receipt with a torn
+  edge and a shield-check on the brand ink blue.
+- Delete confirmation for swipe-deleting items from the list (the
+  cascade destroys the receipt archive; one tap shouldn't).
+- Accessibility labels on icon-only controls (item actions menu, event
+  attachment button).
+
+### Fixed
+- Stale coverage-editor footer claimed reminders "arrive in a later
+  update" — they shipped in Slice 3.
+
 ## Slice 6 — Monetization (2026-07-08)
 
 Slice 5 (CloudKit sync) is deferred by owner decision: blocked on Apple

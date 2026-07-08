@@ -63,6 +63,7 @@ struct ItemDetailView: View {
                     }
                 } label: {
                     Image(systemName: "ellipsis.circle")
+                        .accessibilityLabel("Item actions")
                 }
             }
         }
@@ -251,6 +252,7 @@ struct ItemDetailView: View {
                                                 .font(.caption)
                                         }
                                         .buttonStyle(.plain)
+                                        .accessibilityLabel("View attachment")
                                     }
                                 }
                                 if !event.note.isEmpty {

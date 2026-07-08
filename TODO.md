@@ -20,8 +20,6 @@ explicit sign-off, recorded as an Owner item here before the edit is made.
       one pass (entitlement + container `iCloud.com.birosbenedek.coverkeep`
       + ModelConfiguration + two-device sync test). Models are
       CloudKit-shaped from Slice 0.
-- [ ] Slice 8 — onboarding, settings, empty states, accessibility, HU strings
-      — *home market + the EU story in its own language.*
 - [ ] Add a rule-content re-verification checklist (re-check njt.hu,
       gesetze-im-internet.de, ris.bka.gv.at, EUR-Lex; bump `ruleSetVersion`
       and `contentVerified`) before every App Store release — *statutes
@@ -64,9 +62,23 @@ explicit sign-off, recorded as an Owner item here before the edit is made.
 - [ ] Have the in-app legal copy sanity-checked (rights explanations state
       "general information, not legal advice") — *the EU-rights brain is the
       product; its copy must not read as legal advice.*
+- [ ] **Vet the Hungarian translations** (`Coverkeep/Localizable.xcstrings`),
+      especially the nine `rule.*` rights explanations — *drafted by Claude
+      on 2026-07-08; the owner is the content vetter for legal-adjacent HU
+      copy, same as the rule files.*
 
 ## Done
 
+- [x] Slice 8 — TestFlight polish: onboarding (the EU story in four beats),
+      Settings (Pro status/restore, notification health with a path to
+      re-enable, the rule sets' verification dates surfaced, legal links,
+      version), full Hungarian localization (159 strings incl. all nine
+      rights explanations, guarded by tests), scripted placeholder icon,
+      delete confirmations, accessibility labels — *home market + the EU
+      story in its own language.*
+- [x] Slice 6 — monetization: Coverkeep Pro (annual €14.99 preselected /
+      monthly €1.99 / lifetime €34.99, `.pro.*` IDs), 10-item full-featured
+      free tier, dismissible paywall, local StoreKit config in the scheme.
 - [x] Slice 4 — events + export: claim/repair/return history per item with
       one optional archival attachment each, and full ZIP export via
       KeepCore's ExportArchiveBuilder — deterministic JSON (full fidelity

@@ -20,6 +20,7 @@ struct ItemListView: View {
     @State private var exportArchive: ExportArchive?
     @State private var exportScratchDirectory: URL?
     @State private var exportError: String?
+    @State private var pendingDeletion: [Item] = []
 
     private struct ExportArchive: Identifiable {
         let url: URL
@@ -56,6 +57,13 @@ struct ItemListView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     NavigationLink {
+                        SettingsView()
+                    } label: {
+                        Label("Settings", systemImage: "gearshape")
+                    }
+                }
+                ToolbarItem(placement: .topBarLeading) {
+                    NavigationLink {
                         ReceiptBrowserView()
                     } label: {
                         Label("Receipts", systemImage: "doc.text.image")
@@ -87,6 +95,22 @@ struct ItemListView: View {
             }
             .sheet(item: $exportArchive, onDismiss: cleanUpExport) { archive in
                 ShareSheet(items: [archive.url])
+            }
+            .confirmationDialog(
+                "Delete \(pendingDeletion.first?.name ?? "") and its receipts, coverages, and history?",
+                isPresented: .init(
+                    get: { !pendingDeletion.isEmpty },
+                    set: { if !$0 { pendingDeletion = [] } }
+                ),
+                titleVisibility: .visible
+            ) {
+                Button("Delete Item", role: .destructive) {
+                    for item in pendingDeletion {
+                        modelContext.delete(item)
+                    }
+                    pendingDeletion = []
+                    Task { await reminderSync.resyncAll(in: modelContext) }
+                }
             }
             .alert(
                 "Export failed",
@@ -241,12 +265,9 @@ struct ItemListView: View {
         }
     }
 
+    /// Deleting an item cascades to its receipt archive — confirm first.
     private func deleteItems(at offsets: IndexSet) {
-        let doomed = offsets.map { filteredItems[$0] }
-        for item in doomed {
-            modelContext.delete(item)
-        }
-        Task { await reminderSync.resyncAll(in: modelContext) }
+        pendingDeletion = offsets.map { filteredItems[$0] }
     }
 }
 

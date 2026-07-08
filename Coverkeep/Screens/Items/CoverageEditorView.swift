@@ -65,7 +65,7 @@ struct CoverageEditorView: View {
                         }
                     }
                 } footer: {
-                    Text("Reminders are scheduled once notifications arrive in a later update.")
+                    Text("The reminder fires this many days before the coverage ends.")
                 }
             }
             .navigationTitle(editedCoverage == nil ? "Add Coverage" : "Edit Coverage")

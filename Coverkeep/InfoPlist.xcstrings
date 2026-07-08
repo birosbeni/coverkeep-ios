@@ -1,0 +1,16 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "NSCameraUsageDescription": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A Coverkeep lefotózza a nyugtáidat, hogy tartós, teljes minőségű másolatod legyen, mielőtt a papír kifakulna."
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

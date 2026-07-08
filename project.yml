@@ -19,6 +19,8 @@ settings:
     SWIFT_VERSION: "5.0"
     DEVELOPMENT_TEAM: ""
     CODE_SIGN_STYLE: Automatic
+    # Compiler-extracted String Catalog keys (localization-ready throughout).
+    SWIFT_EMIT_LOC_STRINGS: YES
 
 targets:
   Coverkeep:

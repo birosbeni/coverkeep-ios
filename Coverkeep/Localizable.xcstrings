@@ -1,7 +1,1614 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-
+  "sourceLanguage": "en",
+  "strings": {
+    "%@ / day": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / nap"
+          }
+        }
+      }
+    },
+    "%@ / month": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / hó"
+          }
+        }
+      }
+    },
+    "%@ / week": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / hét"
+          }
+        }
+      }
+    },
+    "%@ / year": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / év"
+          }
+        }
+      }
+    },
+    "%@ for “%@” ends %@.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ for “%2$@” ends %3$@."
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "„%2$@” – %1$@, lejárat: %3$@."
+          }
+        }
+      }
+    },
+    "%@ · one-time purchase": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · egyszeri vásárlás"
+          }
+        }
+      }
+    },
+    "%@ · until %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ · until %2$@"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ · eddig: %2$@"
+          }
+        }
+      }
+    },
+    "%@ – %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ – %2$@"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ – %2$@"
+          }
+        }
+      }
+    },
+    "%lld days before": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld nappal előtte"
+          }
+        }
+      }
+    },
+    "%lld days left": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld nap van hátra"
+          }
+        }
+      }
+    },
+    "About": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Névjegy"
+          }
+        }
+      }
+    },
+    "Add Coverage": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Védelem hozzáadása"
+          }
+        }
+      }
+    },
+    "Add Item": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tétel hozzáadása"
+          }
+        }
+      }
+    },
+    "Add Receipt": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nyugta hozzáadása"
+          }
+        }
+      }
+    },
+    "Add a purchase and see your actual rights — the 2-year legal guarantee, the 14-day return window, national extras like the Hungarian jótállás — with official sources.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rögzíts egy vásárlást, és azonnal látod a tényleges jogaidat — a 2 éves kellékszavatosságot, a 14 napos elállási időt és az olyan nemzeti extrákat, mint a jótállás — hivatalos forrásokkal."
+          }
+        }
+      }
+    },
+    "Add a purchase to see your warranty rights and deadlines — it takes 30 seconds.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adj hozzá egy vásárlást, és látod a garanciális jogaidat és határidőidet — 30 másodperc az egész."
+          }
+        }
+      }
+    },
+    "Added manually": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kézzel hozzáadva"
+          }
+        }
+      }
+    },
+    "All categories": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Minden kategória"
+          }
+        }
+      }
+    },
+    "Amount": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Összeg"
+          }
+        }
+      }
+    },
+    "Appliance": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Háztartási gép"
+          }
+        }
+      }
+    },
+    "Attachment": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Melléklet"
+          }
+        }
+      }
+    },
+    "BEST VALUE": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LEGJOBB ÁR"
+          }
+        }
+      }
+    },
+    "Bought": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vásárlás módja"
+          }
+        }
+      }
+    },
+    "Brand": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Márka"
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mégse"
+          }
+        }
+      }
+    },
+    "Capture receipts from an item — they are archived here before the paper fades.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A nyugtákat a tételeknél tudod rögzíteni — itt őrződnek meg, mielőtt a papír kifakulna."
+          }
+        }
+      }
+    },
+    "Category": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kategória"
+          }
+        }
+      }
+    },
+    "Claim": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reklamáció"
+          }
+        }
+      }
+    },
+    "Clothing": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ruházat"
+          }
+        }
+      }
+    },
+    "Computed from your country's rules — dates update when the purchase details change.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Az országod szabályai alapján számítva — a dátumok a vásárlás adatainak módosításakor frissülnek."
+          }
+        }
+      }
+    },
+    "Consumer-rights rule sets": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fogyasztói jogi szabálykészletek"
+          }
+        }
+      }
+    },
+    "Counted from the purchase date — set the delivery date if it arrived later.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A vásárlás dátumától számítva — állítsd be a kézbesítés dátumát, ha később érkezett."
+          }
+        }
+      }
+    },
+    "Country": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ország"
+          }
+        }
+      }
+    },
+    "Coverage": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Védelem"
+          }
+        }
+      }
+    },
+    "Coverkeep deadline": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coverkeep határidő"
+          }
+        }
+      }
+    },
+    "Currency": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pénznem"
+          }
+        }
+      }
+    },
+    "Date": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dátum"
+          }
+        }
+      }
+    },
+    "Deadline reminders are on.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A határidő-emlékeztetők bekapcsolva."
+          }
+        }
+      }
+    },
+    "Defects are presumed present from the start until %@.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ napjáig vélelmezett, hogy a hiba már az átadáskor megvolt."
+          }
+        }
+      }
+    },
+    "Delete": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Törlés"
+          }
+        }
+      }
+    },
+    "Delete %@ and its receipts, coverages, and history?": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Törlöd a(z) %@ tételt a nyugtáival, védelmeivel és előzményeivel együtt?"
+          }
+        }
+      }
+    },
+    "Delete Item": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tétel törlése"
+          }
+        }
+      }
+    },
+    "Delete this item and everything attached to it?": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Törlöd ezt a tételt mindennel együtt, ami hozzá tartozik?"
+          }
+        }
+      }
+    },
+    "Delivered": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kézbesítve"
+          }
+        }
+      }
+    },
+    "Delivered later": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Később érkezett"
+          }
+        }
+      }
+    },
+    "Delivery date": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kézbesítés dátuma"
+          }
+        }
+      }
+    },
+    "EU minimum (fallback)": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EU-minimum (alapértelmezés)"
+          }
+        }
+      }
+    },
+    "Edit": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Szerkesztés"
+          }
+        }
+      }
+    },
+    "Edit Coverage": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Védelem szerkesztése"
+          }
+        }
+      }
+    },
+    "Edit Event": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bejegyzés szerkesztése"
+          }
+        }
+      }
+    },
+    "Edit Item": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tétel szerkesztése"
+          }
+        }
+      }
+    },
+    "Edit Receipt": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nyugta szerkesztése"
+          }
+        }
+      }
+    },
+    "Electronics": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elektronika"
+          }
+        }
+      }
+    },
+    "Ends": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vége"
+          }
+        }
+      }
+    },
+    "Ends today": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ma jár le"
+          }
+        }
+      }
+    },
+    "Enter the price to see whether a mandatory warranty applies.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add meg az árat, hogy kiderüljön, jár-e kötelező jótállás."
+          }
+        }
+      }
+    },
+    "Europe's rules, built in": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Európa szabályai, beépítve"
+          }
+        }
+      }
+    },
+    "Every EU right computed with sources, on every item": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Minden EU-s jog kiszámítva, forrásokkal, minden tételen"
+          }
+        }
+      }
+    },
+    "Every deadline gets a reminder before it expires — return windows count down in days.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Minden határidőről emlékeztetőt kapsz, mielőtt lejárna — az elállási idő napokban számol vissza."
+          }
+        }
+      }
+    },
+    "Expired": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lejárt"
+          }
+        }
+      }
+    },
+    "Expiring soon": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hamarosan lejár"
+          }
+        }
+      }
+    },
+    "Export All…": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Minden exportálása…"
+          }
+        }
+      }
+    },
+    "Export failed": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Az exportálás nem sikerült"
+          }
+        }
+      }
+    },
+    "Extended warranty": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kiterjesztett garancia"
+          }
+        }
+      }
+    },
+    "Filter": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Szűrés"
+          }
+        }
+      }
+    },
+    "Full export, always free": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teljes exportálás, mindig ingyen"
+          }
+        }
+      }
+    },
+    "Furniture": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bútor"
+          }
+        }
+      }
+    },
+    "General information based on official sources — not legal advice.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hivatalos forrásokon alapuló általános tájékoztatás — nem jogi tanácsadás."
+          }
+        }
+      }
+    },
+    "Get Started": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kezdjük"
+          }
+        }
+      }
+    },
+    "History": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Előzmények"
+          }
+        }
+      }
+    },
+    "In store": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Üzletben"
+          }
+        }
+      }
+    },
+    "Item": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tétel"
+          }
+        }
+      }
+    },
+    "Item actions": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tétel műveletei"
+          }
+        }
+      }
+    },
+    "Items": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tételek"
+          }
+        }
+      }
+    },
+    "Jewelry": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ékszer"
+          }
+        }
+      }
+    },
+    "Kind": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Típus"
+          }
+        }
+      }
+    },
+    "Label": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Címke"
+          }
+        }
+      }
+    },
+    "Legal guarantee": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kellékszavatosság"
+          }
+        }
+      }
+    },
+    "Log Event": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esemény rögzítése"
+          }
+        }
+      }
+    },
+    "Log a claim, repair, or return": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rögzíts reklamációt, javítást vagy visszaküldést"
+          }
+        }
+      }
+    },
+    "Mandatory-warranty tiers are defined in %@; enter the price in %@ to match them.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A kötelező jótállás sávjai %1$@ pénznemben értendők — az árat is %1$@ pénznemben add meg."
+          }
+        }
+      }
+    },
+    "Model": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modell"
+          }
+        }
+      }
+    },
+    "Name": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Név"
+          }
+        }
+      }
+    },
+    "Name, brand, seller…": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Név, márka, eladó…"
+          }
+        }
+      }
+    },
+    "New Item": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Új tétel"
+          }
+        }
+      }
+    },
+    "No account, no server — your documents stay in your iCloud": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nincs fiók, nincs szerver — a dokumentumaid a saját iCloudodban maradnak"
+          }
+        }
+      }
+    },
+    "No account, no server, no analytics. Your documents stay on your device, and you can export everything, any time.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nincs fiók, nincs szerver, nincs analitika. A dokumentumaid a készülékeden maradnak, és bármikor mindent exportálhatsz."
+          }
+        }
+      }
+    },
+    "No account, no server, no analytics. Your documents stay on your device.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nincs fiók, nincs szerver, nincs analitika. A dokumentumaid a készülékeden maradnak."
+          }
+        }
+      }
+    },
+    "No items yet": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Még nincs tétel"
+          }
+        }
+      }
+    },
+    "No mandatory warranty at this price — it only applies above a minimum price.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ennél az árnál nem jár kötelező jótállás — csak egy minimális ár felett érvényes."
+          }
+        }
+      }
+    },
+    "No receipts yet": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Még nincs nyugta"
+          }
+        }
+      }
+    },
+    "No vetted rule set for this country yet — showing the EU minimum rules.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ehhez az országhoz még nincs ellenőrzött szabálykészlet — az EU-minimumot mutatjuk."
+          }
+        }
+      }
+    },
+    "Not Now": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Most nem"
+          }
+        }
+      }
+    },
+    "Note": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Megjegyzés"
+          }
+        }
+      }
+    },
+    "Notes": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Megjegyzések"
+          }
+        }
+      }
+    },
+    "Nothing matches — try fewer words.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nincs találat — próbáld kevesebb szóval."
+          }
+        }
+      }
+    },
+    "Notifications are off — deadline reminders can't fire.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Az értesítések ki vannak kapcsolva — a határidő-emlékeztetők nem tudnak megszólalni."
+          }
+        }
+      }
+    },
+    "OK": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        }
+      }
+    },
+    "One attachment per entry — adding another replaces it.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bejegyzésenként egy melléklet — új hozzáadásakor a régi cserélődik."
+          }
+        }
+      }
+    },
+    "Online": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online"
+          }
+        }
+      }
+    },
+    "Other": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Egyéb"
+          }
+        }
+      }
+    },
+    "Pages": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oldalak"
+          }
+        }
+      }
+    },
+    "Photograph long receipts in sections — pages stay together as one document. Originals are stored at full quality.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A hosszú nyugtákat fotózd szakaszonként — az oldalak egy dokumentumként maradnak együtt. Az eredetik teljes minőségben tárolódnak."
+          }
+        }
+      }
+    },
+    "Photograph the receipt before it fades": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fotózd le a nyugtát, mielőtt kifakul"
+          }
+        }
+      }
+    },
+    "Price": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ár"
+          }
+        }
+      }
+    },
+    "Privacy Policy": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adatvédelmi tájékoztató"
+          }
+        }
+      }
+    },
+    "Pro is active — unlimited items": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A Pro aktív — korlátlan tétel"
+          }
+        }
+      }
+    },
+    "Purchase": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vásárlás"
+          }
+        }
+      }
+    },
+    "Purchase date": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vásárlás dátuma"
+          }
+        }
+      }
+    },
+    "Purchased": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vásárolva"
+          }
+        }
+      }
+    },
+    "Receipt": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nyugta"
+          }
+        }
+      }
+    },
+    "Receipt, warranty card, invoice…": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nyugta, jótállási jegy, számla…"
+          }
+        }
+      }
+    },
+    "Receipts": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nyugták"
+          }
+        }
+      }
+    },
+    "Receipts that don't fade": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nyugták, amelyek nem fakulnak ki"
+          }
+        }
+      }
+    },
+    "Remind me": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emlékeztess"
+          }
+        }
+      }
+    },
+    "Reminded before it's too late": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emlékeztető, mielőtt késő lenne"
+          }
+        }
+      }
+    },
+    "Reminders": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emlékeztetők"
+          }
+        }
+      }
+    },
+    "Repair": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Javítás"
+          }
+        }
+      }
+    },
+    "Restore Purchases": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vásárlások visszaállítása"
+          }
+        }
+      }
+    },
+    "Results": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Találatok"
+          }
+        }
+      }
+    },
+    "Return": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Visszaküldés"
+          }
+        }
+      }
+    },
+    "Return window": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elállási idő"
+          }
+        }
+      }
+    },
+    "Return windows": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elállási idők"
+          }
+        }
+      }
+    },
+    "Save": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mentés"
+          }
+        }
+      }
+    },
+    "Seller": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eladó"
+          }
+        }
+      }
+    },
+    "Serial number": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sorozatszám"
+          }
+        }
+      }
+    },
+    "Settings": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beállítások"
+          }
+        }
+      }
+    },
+    "Sports & outdoor": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sport és szabadidő"
+          }
+        }
+      }
+    },
+    "Starts": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kezdete"
+          }
+        }
+      }
+    },
+    "Subscriptions renew automatically until cancelled. Manage them in your App Store account settings.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Az előfizetések lemondásig automatikusan megújulnak. Az App Store-fiókod beállításaiban kezelheted őket."
+          }
+        }
+      }
+    },
+    "Terms of Use": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Felhasználási feltételek"
+          }
+        }
+      }
+    },
+    "The free vault holds %lld items, full-featured. Pro removes the limit.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Az ingyenes széf %lld tételt tárol, teljes funkcionalitással. A Pro eltörli a korlátot."
+          }
+        }
+      }
+    },
+    "The reminder fires this many days before the coverage ends.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Az emlékeztető ennyi nappal a védelem lejárta előtt szólal meg."
+          }
+        }
+      }
+    },
+    "Thermal paper fades in months. Photograph the receipt once; the full-quality copy is archived for the life of the warranty.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A hőpapír hónapok alatt kifakul. Fotózd le a nyugtát egyszer; a teljes minőségű másolat a garancia teljes idejére archiválva marad."
+          }
+        }
+      }
+    },
+    "Tool": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Szerszám"
+          }
+        }
+      }
+    },
+    "Turn on in Settings": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bekapcsolás a Beállításokban"
+          }
+        }
+      }
+    },
+    "Unlimited items": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Korlátlan tétel"
+          }
+        }
+      }
+    },
+    "Upgrade — the free vault holds %lld items": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Válts Próra — az ingyenes széf %lld tételt tárol"
+          }
+        }
+      }
+    },
+    "Vehicle": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jármű"
+          }
+        }
+      }
+    },
+    "Version": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verzió"
+          }
+        }
+      }
+    },
+    "View attachment": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Melléklet megtekintése"
+          }
+        }
+      }
+    },
+    "Warranty": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jótállás"
+          }
+        }
+      }
+    },
+    "What happened": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mi történt"
+          }
+        }
+      }
+    },
+    "You'll be asked for permission when your first deadline exists.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Az engedélyt akkor kérjük, amikor létrejön az első határidőd."
+          }
+        }
+      }
+    },
+    "Your receipts, your rights, your deadlines.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A nyugtáid, a jogaid, a határidőid."
+          }
+        }
+      }
+    },
+    "Your rights": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A jogaid"
+          }
+        }
+      }
+    },
+    "Yours, entirely": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teljesen a tiéd"
+          }
+        }
+      }
+    },
+    "rule.at.legalGuarantee": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gewährleistung: az eladó az átadástól számított 2 évig felel az olyan hibákért, amelyek már az átadáskor megvoltak. Az első évben vélelmezett, hogy a hiba kezdettől megvolt. Az igények a 2 év lejárta után még 3 hónapig érvényesíthetők."
+          }
+        }
+      }
+    },
+    "rule.at.withdrawal": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rücktrittsrecht: az online vásárolt terméket az átvételtől számított 14 napon belül indoklás nélkül visszaküldheted. Naptári napokban számolva. Egyes termékek kivételek."
+          }
+        }
+      }
+    },
+    "rule.de.legalGuarantee": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gewährleistung: az eladó a kézbesítéstől számított 2 évig felel az olyan hibákért, amelyek már az átadáskor megvoltak. Az első évben vélelmezett, hogy a hiba kezdettől megvolt — az ellenkezőjét az eladónak kell bizonyítania."
+          }
+        }
+      }
+    },
+    "rule.de.withdrawal": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Widerrufsrecht: az online vásárolt terméket az átvételtől számított 14 napon belül indoklás nélkül visszaküldheted. Naptári napokban számolva. Egyes termékek kivételek."
+          }
+        }
+      }
+    },
+    "rule.eu.legalGuarantee": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EU-szintű minimum: az eladó az átvételtől számított 2 évig felel az olyan hibákért, amelyek már az átadáskor megvoltak. Az első évben vélelmezett, hogy a hiba kezdettől megvolt — az ellenkezőjét az eladónak kell bizonyítania. A nemzeti jog ennél többet is adhat."
+          }
+        }
+      }
+    },
+    "rule.eu.withdrawal": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Az online vásárolt terméket az átvételtől számított 14 napon belül indoklás nélkül visszaküldheted. Itt naptári napokban számoljuk; ha az utolsó nap munkaszüneti napra esik, a jog a következő munkanapig is járhat. Egyes termékek kivételek (egyedi készítésű termékek, felbontott higiéniai cikkek stb.)."
+          }
+        }
+      }
+    },
+    "rule.hu.legalGuarantee": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kellékszavatosság: az eladó az átadástól számított 2 évig felel az olyan hibákért, amelyek már az átadáskor megvoltak. Az első évben vélelmezett, hogy a hiba kezdettől megvolt — az ellenkezőjét az eladónak kell bizonyítania."
+          }
+        }
+      }
+    },
+    "rule.hu.mandatoryWarranty": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jótállás: a legalább 10 000 Ft-os új tartós fogyasztási cikkekre kötelező jótállás jár — 250 000 Ft-ig 2 év, felette 3 év. A rendelet mellékletében felsorolt termékkörökre vonatkozik (a legtöbb elektronikai és háztartási cikk), ezért ellenőrizd, hogy a terméked ide tartozik-e. A kellékszavatossággal ellentétben a jótállás alatt végig az eladónak kell bizonyítania, hogy a termék hibátlan volt."
+          }
+        }
+      }
+    },
+    "rule.hu.withdrawal": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elállási jog: az online vásárolt terméket az átvételtől számított 14 napon belül indoklás nélkül visszaküldheted. Naptári napokban számolva. Egyes termékek kivételek (egyedi készítésű termékek, felbontott higiéniai cikkek stb.)."
+          }
+        }
+      }
+    },
+    "until %@": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eddig: %@"
+          }
+        }
+      }
+    },
+    "verified %@": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ellenőrizve: %@"
+          }
+        }
+      }
+    },
+    "· %lld pages": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "· %lld oldal"
+          }
+        }
+      }
+    }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }
