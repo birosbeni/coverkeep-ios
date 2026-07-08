@@ -8,6 +8,7 @@ import WarrantyRules
 struct ItemDetailView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.warrantyEngine) private var engine
+    @Environment(ReminderSync.self) private var reminderSync
     @Environment(\.dismiss) private var dismiss
 
     let item: Item
@@ -84,6 +85,7 @@ struct ItemDetailView: View {
         ) {
             Button("Delete Item", role: .destructive) {
                 modelContext.delete(item)
+                Task { await reminderSync.resyncAll(in: modelContext) }
                 dismiss()
             }
         }
@@ -182,6 +184,7 @@ struct ItemDetailView: View {
                     .swipeActions {
                         Button("Delete", systemImage: "trash", role: .destructive) {
                             modelContext.delete(coverage)
+                            Task { await reminderSync.resyncAll(in: modelContext) }
                         }
                     }
             }

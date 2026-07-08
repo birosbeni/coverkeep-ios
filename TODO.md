@@ -15,10 +15,6 @@ explicit sign-off, recorded as an Owner item here before the edit is made.
 
 ## Code (Claude)
 
-- [ ] Slice 3 — deadlines dashboard + 2-second search + reminder scheduling
-      through KeepCore (every coverage end date gets one; leads are already
-      stored per coverage) — *"where is the vacuum receipt" and "remind me
-      before it expires" are core promises.*
 - [ ] Slice 4 — claim/repair events + full ZIP export — *"your data, your
       iCloud" needs a working exit door.*
 - [ ] Slice 5 — CloudKit private-database sync — *models are CloudKit-shaped
@@ -70,6 +66,14 @@ explicit sign-off, recorded as an Owner item here before the edit is made.
 
 ## Done
 
+- [x] Slice 3 — deadlines dashboard (return windows counting down from day
+      one, coverages entering their lead window), 2-second diacritic-
+      insensitive search across name/brand/seller/model/notes/category
+      with a category filter, and reminder scheduling through KeepCore:
+      one notification per live coverage, full resync after every
+      mutation and on foreground, permission requested only once there is
+      something to remind about — *"where is the vacuum receipt" and
+      "remind me before it expires" delivered.*
 - [x] Slice 2 — receipt capture + archive: multi-page receipts (camera /
       photo library / PDF via KeepCore's AttachmentsEditor), byte-for-byte
       external storage with camera captures at archival quality (KeepCore

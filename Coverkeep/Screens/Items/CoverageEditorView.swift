@@ -7,6 +7,7 @@ import WarrantyRules
 /// rules and change only when the purchase facts do.
 struct CoverageEditorView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(ReminderSync.self) private var reminderSync
     @Environment(\.dismiss) private var dismiss
 
     let item: Item
@@ -76,6 +77,7 @@ struct CoverageEditorView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
                         save()
+                        Task { await reminderSync.resyncAll(in: modelContext) }
                         dismiss()
                     }
                     .disabled(!datesValid)

@@ -8,6 +8,7 @@ import WarrantyRules
 struct ItemFormView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.warrantyEngine) private var engine
+    @Environment(ReminderSync.self) private var reminderSync
     @Environment(\.dismiss) private var dismiss
 
     @State private var model: ItemFormModel
@@ -80,6 +81,7 @@ struct ItemFormView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
                         model.save(in: modelContext, engine: engine)
+                        Task { await reminderSync.resyncAll(in: modelContext) }
                         dismiss()
                     }
                     .disabled(!model.canSave)
@@ -116,4 +118,5 @@ struct ItemFormView: View {
 #Preview {
     ItemFormView()
         .modelContainer(for: [Item.self], inMemory: true)
+        .environment(ReminderSync())
 }

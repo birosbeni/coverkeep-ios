@@ -38,6 +38,9 @@ final class Coverage {
     /// Days before `endDate` the reminder fires. Defaults per CLAUDE.md:
     /// 30 for long coverages, 3 for withdrawal windows.
     var reminderLeadDays: Int = 30
+    /// Stable identity for this coverage's local notification, so edits
+    /// replace rather than duplicate it.
+    var reminderID: UUID = UUID()
     var createdAt: Date = Date.now
 
     var item: Item?

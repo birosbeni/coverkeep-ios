@@ -7,9 +7,12 @@ import WarrantyRules
 
 @main
 struct CoverkeepApp: App {
+    @State private var reminderSync = ReminderSync()
+
     var body: some Scene {
         WindowGroup {
             ItemListView()
+                .environment(reminderSync)
         }
         // Local store for now; CloudKit private-database sync is Slice 5.
         // The models are CloudKit-compatible from day one (see Models/).

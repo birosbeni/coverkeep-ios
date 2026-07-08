@@ -2,6 +2,32 @@
 
 All notable changes to Coverkeep, one entry per vertical slice.
 
+## Slice 3 — Deadlines + search (2026-07-08)
+
+### Added
+- Home dashboard above the vault: **Return windows** (every active
+  withdrawal counting down in days from day one — they are short and
+  irreversible) and **Expiring soon** (non-withdrawal coverages that have
+  entered their reminder lead window, so the chip, the dashboard, and the
+  future notification always agree). Rows link straight to the item.
+- 2-second search: `.searchable` across name, brand, seller, model,
+  notes, and category label — case- and diacritic-insensitive (porszivo
+  finds Porszívó), multi-term AND across fields ("bosch drill"), plus a
+  category filter menu that combines with text.
+- Reminder scheduling through KeepCore's `ReminderScheduler`: one local
+  notification per live coverage of every unarchived item, fired
+  `reminderLeadDays` before the end date (30 default, 3 for withdrawal).
+  `ReminderSync` wipes and rebuilds the pending set after every mutation
+  (item/coverage save or delete) and on foregrounding — idempotent, so
+  stale and deleted deadlines can't linger. Notification permission is
+  requested only when the first coverage exists, and the app stays fully
+  functional if denied.
+- `Coverage.reminderID` (stable UUID) so edits replace rather than
+  duplicate notifications.
+- 11 new tests (search matching, dashboard selection incl. archived and
+  expired exclusion, reminder planning with end-today boundary and body
+  copy); 38 app + 50 package tests green.
+
 ## Slice 2 — Receipt capture + archive (2026-07-08)
 
 ### Added

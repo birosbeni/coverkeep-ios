@@ -2,37 +2,41 @@ import SwiftUI
 import SwiftData
 import KeepCore
 
-/// The vault: every unarchived purchase, newest first, each with its
-/// nearest deadline at a glance. Search and the deadlines dashboard arrive
-/// in Slice 3.
+/// Home: the deadlines dashboard (active return windows counting down,
+/// coverages entering their reminder window) above the vault itself, with
+/// 2-second search across name, brand, seller, model, notes, and category.
 struct ItemListView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(ReminderSync.self) private var reminderSync
+    @Environment(\.scenePhase) private var scenePhase
     @Query(filter: #Predicate<Item> { !$0.archived }, sort: \Item.createdAt, order: .reverse)
     private var items: [Item]
 
     @State private var showingNewItem = false
+    @State private var searchText = ""
+    @State private var categoryFilter: ItemCategory?
+
+    private var isSearching: Bool {
+        !searchText.trimmingCharacters(in: .whitespaces).isEmpty || categoryFilter != nil
+    }
+
+    private var filteredItems: [Item] {
+        ItemSearch.filter(items, query: searchText, category: categoryFilter)
+    }
 
     var body: some View {
         NavigationStack {
             Group {
                 if items.isEmpty {
-                    ContentUnavailableView {
-                        Label("No items yet", systemImage: "archivebox")
-                    } description: {
-                        Text("Add a purchase to see your warranty rights and deadlines — it takes 30 seconds.")
-                    } actions: {
-                        Button("Add Item") { showingNewItem = true }
-                            .buttonStyle(.borderedProminent)
-                    }
+                    emptyState
                 } else {
                     List {
-                        ForEach(items) { item in
-                            NavigationLink(value: item) {
-                                ItemRow(item: item)
-                            }
+                        if !isSearching {
+                            dashboardSections
                         }
-                        .onDelete(perform: deleteItems)
+                        itemsSection
                     }
+                    .searchable(text: $searchText, prompt: "Name, brand, seller…")
                 }
             }
             .navigationTitle("Coverkeep")
@@ -47,6 +51,11 @@ struct ItemListView: View {
                         Label("Receipts", systemImage: "doc.text.image")
                     }
                 }
+                if !items.isEmpty {
+                    ToolbarItem(placement: .topBarLeading) {
+                        categoryMenu
+                    }
+                }
                 ToolbarItem(placement: .primaryAction) {
                     Button("Add Item", systemImage: "plus") {
                         showingNewItem = true
@@ -57,12 +66,115 @@ struct ItemListView: View {
                 ItemFormView()
             }
         }
+        .task {
+            await reminderSync.resyncAll(in: modelContext)
+        }
+        .onChange(of: scenePhase) { _, phase in
+            if phase == .active {
+                Task { await reminderSync.resyncAll(in: modelContext) }
+            }
+        }
+    }
+
+    // MARK: Dashboard
+
+    @ViewBuilder
+    private var dashboardSections: some View {
+        let returnWindows = Dashboard.returnWindows(in: items)
+        let expiring = Dashboard.expiringSoon(in: items)
+
+        if !returnWindows.isEmpty {
+            Section("Return windows") {
+                ForEach(returnWindows) { entry in
+                    deadlineRow(entry)
+                }
+            }
+        }
+        if !expiring.isEmpty {
+            Section("Expiring soon") {
+                ForEach(expiring) { entry in
+                    deadlineRow(entry)
+                }
+            }
+        }
+    }
+
+    private func deadlineRow(_ entry: DeadlineEntry) -> some View {
+        NavigationLink(value: entry.item) {
+            HStack(alignment: .firstTextBaseline) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(entry.item.name)
+                        .font(.headline)
+                    Text("\(RightsCopy.title(for: entry.coverage.kind)) · until \(entry.coverage.endDate.formatted(date: .abbreviated, time: .omitted))")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                        .monospacedDigit()
+                }
+                Spacer()
+                DeadlineChip(
+                    status: .of(
+                        endDate: entry.coverage.endDate,
+                        leadDays: entry.coverage.reminderLeadDays
+                    )
+                )
+            }
+        }
+    }
+
+    // MARK: Items
+
+    private var itemsSection: some View {
+        Section(isSearching ? "Results" : "Items") {
+            if filteredItems.isEmpty {
+                Text("Nothing matches — try fewer words.")
+                    .foregroundStyle(.secondary)
+            } else {
+                ForEach(filteredItems) { item in
+                    NavigationLink(value: item) {
+                        ItemRow(item: item)
+                    }
+                }
+                .onDelete(perform: deleteItems)
+            }
+        }
+    }
+
+    private var categoryMenu: some View {
+        Menu {
+            Picker("Category", selection: $categoryFilter) {
+                Text("All categories").tag(ItemCategory?.none)
+                ForEach(ItemCategory.allCases) { category in
+                    Label(category.label, systemImage: category.systemImage)
+                        .tag(ItemCategory?.some(category))
+                }
+            }
+        } label: {
+            Label(
+                "Filter",
+                systemImage: categoryFilter == nil
+                    ? "line.3.horizontal.decrease.circle"
+                    : "line.3.horizontal.decrease.circle.fill"
+            )
+        }
+    }
+
+    private var emptyState: some View {
+        ContentUnavailableView {
+            Label("No items yet", systemImage: "archivebox")
+        } description: {
+            Text("Add a purchase to see your warranty rights and deadlines — it takes 30 seconds.")
+        } actions: {
+            Button("Add Item") { showingNewItem = true }
+                .buttonStyle(.borderedProminent)
+        }
     }
 
     private func deleteItems(at offsets: IndexSet) {
-        for index in offsets {
-            modelContext.delete(items[index])
+        let doomed = offsets.map { filteredItems[$0] }
+        for item in doomed {
+            modelContext.delete(item)
         }
+        Task { await reminderSync.resyncAll(in: modelContext) }
     }
 }
 
@@ -118,4 +230,5 @@ struct ItemRow: View {
 #Preview {
     ItemListView()
         .modelContainer(for: [Item.self], inMemory: true)
+        .environment(ReminderSync())
 }
