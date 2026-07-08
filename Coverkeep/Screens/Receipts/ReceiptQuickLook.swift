@@ -2,23 +2,41 @@ import SwiftUI
 import QuickLook
 import KeepCore
 
-/// Full-screen receipt viewing via QuickLook: system-grade zoom for reading
-/// thermal-paper fine print, built-in paging across pages, PDF rendering,
-/// and sharing — no custom viewer to maintain.
-///
-/// QuickLook needs file URLs, so pages are materialized into a private
-/// temporary directory that is removed when the viewer disappears.
-struct ReceiptQuickLook: UIViewControllerRepresentable {
-    let receipt: Receipt
-    let initialPageIndex: Int
+/// One file to preview: a name (used for the temp file, so its extension
+/// drives QuickLook's rendering) and the bytes.
+struct QuickLookFile {
+    let fileName: String
+    let kind: AttachmentKind
+    let data: Data
+}
 
-    init(receipt: Receipt, initialPageIndex: Int = 0) {
-        self.receipt = receipt
-        self.initialPageIndex = initialPageIndex
+/// Full-screen document viewing via QuickLook: system-grade zoom for
+/// reading thermal-paper fine print, built-in paging, PDF rendering, and
+/// sharing — no custom viewer to maintain.
+///
+/// QuickLook needs file URLs, so files are materialized into a private
+/// temporary directory that is removed when the viewer disappears.
+struct QuickLookPreview: UIViewControllerRepresentable {
+    let files: [QuickLookFile]
+    let initialIndex: Int
+
+    init(files: [QuickLookFile], initialIndex: Int = 0) {
+        self.files = files
+        self.initialIndex = initialIndex
+    }
+
+    /// All pages of a receipt.
+    init(receipt: Receipt) {
+        self.init(
+            files: receipt.sortedPages.compactMap { page in
+                guard let data = page.data else { return nil }
+                return QuickLookFile(fileName: page.fileName, kind: page.kind, data: data)
+            }
+        )
     }
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(receipt: receipt, initialPageIndex: initialPageIndex)
+        Coordinator(files: files)
     }
 
     func makeUIViewController(context: Context) -> UINavigationController {
@@ -26,7 +44,7 @@ struct ReceiptQuickLook: UIViewControllerRepresentable {
         preview.dataSource = context.coordinator
         preview.currentPreviewItemIndex = context.coordinator.itemURLs.isEmpty
             ? 0
-            : min(initialPageIndex, context.coordinator.itemURLs.count - 1)
+            : min(initialIndex, context.coordinator.itemURLs.count - 1)
         // Wrapping in a navigation controller gives QuickLook its Done
         // button when presented as a sheet.
         return UINavigationController(rootViewController: preview)
@@ -42,26 +60,25 @@ struct ReceiptQuickLook: UIViewControllerRepresentable {
         let itemURLs: [URL]
         private let scratchDirectory: URL?
 
-        init(receipt: Receipt, initialPageIndex: Int) {
+        init(files: [QuickLookFile]) {
             let directory = FileManager.default.temporaryDirectory
-                .appendingPathComponent("receipt-preview-\(UUID().uuidString)", isDirectory: true)
+                .appendingPathComponent("quicklook-\(UUID().uuidString)", isDirectory: true)
             var urls: [URL] = []
             do {
                 try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
-                for (index, page) in receipt.sortedPages.enumerated() {
-                    guard let data = page.data else { continue }
-                    let name = page.fileName.isEmpty
-                        ? "page-\(index + 1).\(page.kind == .pdf ? "pdf" : "jpg")"
-                        : page.fileName
+                for (index, file) in files.enumerated() {
+                    let name = file.fileName.isEmpty
+                        ? "file-\(index + 1).\(file.kind == .pdf ? "pdf" : "jpg")"
+                        : file.fileName
                     let url = directory.appendingPathComponent("\(index + 1)-\(name)")
-                    try data.write(to: url)
+                    try file.data.write(to: url)
                     urls.append(url)
                 }
                 self.scratchDirectory = directory
             } catch {
                 // Preview is a read-only convenience; the archival bytes are
                 // untouched in the store. Show what was written, if anything.
-                assertionFailure("Failed to materialize receipt pages for preview: \(error)")
+                assertionFailure("Failed to materialize files for preview: \(error)")
                 self.scratchDirectory = directory
             }
             self.itemURLs = urls

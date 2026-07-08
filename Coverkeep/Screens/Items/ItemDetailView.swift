@@ -20,6 +20,9 @@ struct ItemDetailView: View {
     @State private var addingReceipt = false
     @State private var editingReceipt: Receipt?
     @State private var viewedReceipt: Receipt?
+    @State private var addingEvent = false
+    @State private var editingEvent: Event?
+    @State private var viewedAttachmentEvent: Event?
 
     private var sortedCoverages: [Coverage] {
         (item.coverages ?? []).sorted { $0.endDate < $1.endDate }
@@ -37,6 +40,7 @@ struct ItemDetailView: View {
             detailsSection
             receiptsSection
             rightsSection
+            eventsSection
         }
         .navigationTitle(item.name)
         .navigationBarTitleDisplayMode(.inline)
@@ -49,6 +53,9 @@ struct ItemDetailView: View {
                     }
                     Button("Add Coverage", systemImage: "plus.shield.checkered") {
                         addingCoverage = true
+                    }
+                    Button("Log Event", systemImage: "clock.badge.exclamationmark") {
+                        addingEvent = true
                     }
                     Divider()
                     Button("Delete Item", systemImage: "trash", role: .destructive) {
@@ -75,8 +82,22 @@ struct ItemDetailView: View {
             ReceiptFormView(item: item, receipt: receipt)
         }
         .sheet(item: $viewedReceipt) { receipt in
-            ReceiptQuickLook(receipt: receipt)
+            QuickLookPreview(receipt: receipt)
                 .ignoresSafeArea()
+        }
+        .sheet(isPresented: $addingEvent) {
+            EventFormView(item: item, editedEvent: nil)
+        }
+        .sheet(item: $editingEvent) { event in
+            EventFormView(item: item, editedEvent: event)
+        }
+        .sheet(item: $viewedAttachmentEvent) { event in
+            if let draft = event.attachmentDraft {
+                QuickLookPreview(
+                    files: [QuickLookFile(fileName: draft.fileName, kind: draft.kind, data: draft.data)]
+                )
+                .ignoresSafeArea()
+            }
         }
         .confirmationDialog(
             "Delete this item and everything attached to it?",
@@ -202,6 +223,63 @@ struct ItemDetailView: View {
             Text("Your rights")
         } footer: {
             Text(RightsCopy.disclaimer)
+        }
+    }
+
+    private var eventsSection: some View {
+        Section {
+            let events = (item.events ?? []).sorted { $0.date > $1.date }
+            if events.isEmpty {
+                Button {
+                    addingEvent = true
+                } label: {
+                    Label("Log a claim, repair, or return", systemImage: "clock.badge.exclamationmark")
+                }
+            } else {
+                ForEach(events) { event in
+                    HStack(alignment: .firstTextBaseline) {
+                        Label {
+                            VStack(alignment: .leading, spacing: 2) {
+                                HStack(spacing: 6) {
+                                    Text(event.kind.label)
+                                        .font(.subheadline.weight(.medium))
+                                    if event.attachmentData != nil {
+                                        Button {
+                                            viewedAttachmentEvent = event
+                                        } label: {
+                                            Image(systemName: "paperclip")
+                                                .font(.caption)
+                                        }
+                                        .buttonStyle(.plain)
+                                    }
+                                }
+                                if !event.note.isEmpty {
+                                    Text(event.note)
+                                        .font(.footnote)
+                                        .foregroundStyle(.secondary)
+                                }
+                            }
+                        } icon: {
+                            Image(systemName: event.kind.systemImage)
+                                .foregroundStyle(.secondary)
+                        }
+                        Spacer()
+                        Text(event.date.formatted(date: .abbreviated, time: .omitted))
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                            .monospacedDigit()
+                    }
+                    .contentShape(Rectangle())
+                    .onTapGesture { editingEvent = event }
+                    .swipeActions {
+                        Button("Delete", systemImage: "trash", role: .destructive) {
+                            modelContext.delete(event)
+                        }
+                    }
+                }
+            }
+        } header: {
+            Text("History")
         }
     }
 

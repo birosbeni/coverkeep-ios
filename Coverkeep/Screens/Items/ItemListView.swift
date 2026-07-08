@@ -15,6 +15,14 @@ struct ItemListView: View {
     @State private var showingNewItem = false
     @State private var searchText = ""
     @State private var categoryFilter: ItemCategory?
+    @State private var exportArchive: ExportArchive?
+    @State private var exportScratchDirectory: URL?
+    @State private var exportError: String?
+
+    private struct ExportArchive: Identifiable {
+        let url: URL
+        var id: String { url.path }
+    }
 
     private var isSearching: Bool {
         !searchText.trimmingCharacters(in: .whitespaces).isEmpty || categoryFilter != nil
@@ -61,9 +69,30 @@ struct ItemListView: View {
                         showingNewItem = true
                     }
                 }
+                if !items.isEmpty {
+                    ToolbarItem(placement: .secondaryAction) {
+                        Button("Export All…", systemImage: "square.and.arrow.up") {
+                            exportVault()
+                        }
+                    }
+                }
             }
             .sheet(isPresented: $showingNewItem) {
                 ItemFormView()
+            }
+            .sheet(item: $exportArchive, onDismiss: cleanUpExport) { archive in
+                ShareSheet(items: [archive.url])
+            }
+            .alert(
+                "Export failed",
+                isPresented: .init(
+                    get: { exportError != nil },
+                    set: { if !$0 { exportError = nil } }
+                )
+            ) {
+                Button("OK", role: .cancel) {}
+            } message: {
+                Text(exportError ?? "")
             }
         }
         .task {
@@ -166,6 +195,29 @@ struct ItemListView: View {
         } actions: {
             Button("Add Item") { showingNewItem = true }
                 .buttonStyle(.borderedProminent)
+        }
+    }
+
+    /// Exports EVERYTHING — archived items included; an exit door that
+    /// filters is not an exit door.
+    private func exportVault() {
+        cleanUpExport()
+        do {
+            let allItems = try modelContext.fetch(FetchDescriptor<Item>())
+            let url = try VaultExport.makeArchive(items: allItems)
+            exportScratchDirectory = url.deletingLastPathComponent()
+            exportArchive = ExportArchive(url: url)
+        } catch {
+            exportError = error.localizedDescription
+        }
+    }
+
+    /// The archive lives in its own temp subdirectory; per the
+    /// ExportArchiveBuilder contract we remove it after sharing.
+    private func cleanUpExport() {
+        if let directory = exportScratchDirectory {
+            try? FileManager.default.removeItem(at: directory)
+            exportScratchDirectory = nil
         }
     }
 

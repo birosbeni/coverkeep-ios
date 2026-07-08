@@ -46,7 +46,7 @@ struct ReceiptBrowserView: View {
         }
         .navigationTitle("Receipts")
         .sheet(item: $viewedReceipt) { receipt in
-            ReceiptQuickLook(receipt: receipt)
+            QuickLookPreview(receipt: receipt)
                 .ignoresSafeArea()
         }
     }

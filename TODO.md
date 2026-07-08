@@ -15,8 +15,6 @@ explicit sign-off, recorded as an Owner item here before the edit is made.
 
 ## Code (Claude)
 
-- [ ] Slice 4 — claim/repair events + full ZIP export — *"your data, your
-      iCloud" needs a working exit door.*
 - [ ] Slice 5 — CloudKit private-database sync — *models are CloudKit-shaped
       from Slice 0; this turns it on.*
 - [ ] Slice 6 — paywall via KeepCore (free: 10 items full-featured) — *IDs
@@ -66,6 +64,13 @@ explicit sign-off, recorded as an Owner item here before the edit is made.
 
 ## Done
 
+- [x] Slice 4 — events + export: claim/repair/return history per item with
+      one optional archival attachment each, and full ZIP export via
+      KeepCore's ExportArchiveBuilder — deterministic JSON (full fidelity
+      incl. rule provenance, money as decimal strings) + attachments/ with
+      collision-deduped names shared between JSON references and files;
+      exports include archived items — *an exit door that filters is not
+      an exit door.*
 - [x] Slice 3 — deadlines dashboard (return windows counting down from day
       one, coverages entering their lead window), 2-second diacritic-
       insensitive search across name/brand/seller/model/notes/category

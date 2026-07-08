@@ -2,6 +2,31 @@
 
 All notable changes to Coverkeep, one entry per vertical slice.
 
+## Slice 4 — Events + export (2026-07-08)
+
+### Added
+- History section on the item: claim / repair / return / note entries with
+  date and note, newest first, plus one optional attachment per entry (a
+  repair quote, a claim confirmation) captured through the same archival
+  pipeline as receipts and viewable via QuickLook.
+- **Full vault export** ("Export All…" on the home screen): a ZIP built by
+  KeepCore's `ExportArchiveBuilder` containing `data.json` — the entire
+  vault at full fidelity, including coverage rule provenance (rule ID,
+  rule-set version), money as exact decimal strings, and archived items —
+  plus `attachments/` with every receipt page and event attachment.
+  File-name collisions are deduplicated once and the same mapping feeds
+  both the JSON references and the written files, so the archive is
+  always self-consistent (tested). JSON is deterministic (sorted keys,
+  ISO-8601) and byte-stable through a decode/re-encode round-trip.
+- Share sheet handoff with temp-directory cleanup per the
+  ExportArchiveBuilder contract; export failures surface in an alert, not
+  silently.
+- QuickLook viewer generalized from receipts to any stored file
+  (`QuickLookPreview`), reused for event attachments.
+- 6 new tests (export fidelity, reference/file agreement, page order
+  after dedup, ZIP magic bytes, event attachment round-trip);
+  44 app + 50 package tests green.
+
 ## Slice 3 — Deadlines + search (2026-07-08)
 
 ### Added

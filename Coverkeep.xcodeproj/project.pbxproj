@@ -35,11 +35,14 @@
 		9135794686C029A5CAE41AC4 /* WarrantyEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4828D438602EE97E35A9770 /* WarrantyEngine.swift */; };
 		98DD411466D9352C1703DA8B /* DeadlineStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB600CF7C49639F900BAB33 /* DeadlineStatusTests.swift */; };
 		9FE92C56F37AF9CCA2B5A22B /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788A6396D831C0508BB28FDF /* ItemListView.swift */; };
+		AE77C54E1FC9EA970E8B00FD /* VaultExportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CCFB04E4E75C3269449CC6 /* VaultExportTests.swift */; };
 		B1E5E1FF540D51011ACF45DC /* ModelSmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A3E64C157E65E05FEA289 /* ModelSmokeTests.swift */; };
+		B7FF9A64A1AC2E2C74397B04 /* EventFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214960F6D07CA0385D16A736 /* EventFormView.swift */; };
 		BA0443992BC6D58F194D5EB1 /* RightsCopyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531CC5AA0F2050536A6997D /* RightsCopyTests.swift */; };
 		BAC178B12CB30F2C2EFA2670 /* ReminderPlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7EC433979497943F188B5A /* ReminderPlanner.swift */; };
 		BBDE56D524A7CE0723A21F32 /* CoverageViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C52D25EF274212CBAA9542 /* CoverageViews.swift */; };
 		C4C43005E7136E0679EDD356 /* ReceiptPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E4B05E2B4DFEDE62DEC871 /* ReceiptPage.swift */; };
+		CA08B0B4B0B45240A0E468DA /* VaultExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A61D8F72FF87F4ED0F64E5 /* VaultExport.swift */; };
 		CDCB6ABE7AA6499F01B9F0C1 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB25928B389296BE110A7F6F /* Event.swift */; };
 		CEAE3A9EDE7E35F3EFC88FD7 /* DeadlineStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A56EB42C4D30C47E93057E /* DeadlineStatus.swift */; };
 		D5AAF8648A3CCCBEEB8DD2C7 /* Coverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD12B8B2DCF408E355133D5 /* Coverage.swift */; };
@@ -66,6 +69,7 @@
 		1517B1B1B3451BFA61630B6F /* RightsCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightsCopy.swift; sourceTree = "<group>"; };
 		1A853D066429B70988A3D9B7 /* ReceiptBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptBrowserView.swift; sourceTree = "<group>"; };
 		1DB600CF7C49639F900BAB33 /* DeadlineStatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlineStatusTests.swift; sourceTree = "<group>"; };
+		214960F6D07CA0385D16A736 /* EventFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFormView.swift; sourceTree = "<group>"; };
 		2DD12B8B2DCF408E355133D5 /* Coverage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coverage.swift; sourceTree = "<group>"; };
 		32E4B05E2B4DFEDE62DEC871 /* ReceiptPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptPage.swift; sourceTree = "<group>"; };
 		3DB6C9245C5D0B9E3F2E77E4 /* Coverkeep.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Coverkeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +83,7 @@
 		788A6396D831C0508BB28FDF /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		7A8622B86A4D1077D4948D81 /* CoverageDerivation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverageDerivation.swift; sourceTree = "<group>"; };
 		7BCAD5B06D287F174CAC8D94 /* Receipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
+		87CCFB04E4E75C3269449CC6 /* VaultExportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultExportTests.swift; sourceTree = "<group>"; };
 		99FE4B22B71B00D977909198 /* ReceiptViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViews.swift; sourceTree = "<group>"; };
 		9AAE213172AA165B3DEAC637 /* ReminderSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderSync.swift; sourceTree = "<group>"; };
 		A0E384C572BD337C0C8113E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,6 +105,7 @@
 		EB8A9BE2235264575AE3D012 /* ReceiptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptTests.swift; sourceTree = "<group>"; };
 		EF5E3058D20CB4A70E6BC1B0 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		F2A56EB42C4D30C47E93057E /* DeadlineStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlineStatus.swift; sourceTree = "<group>"; };
+		F7A61D8F72FF87F4ED0F64E5 /* VaultExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultExport.swift; sourceTree = "<group>"; };
 		F81564BE04E309DA4F29EDE8 /* CoverkeepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverkeepApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +157,7 @@
 			children = (
 				B78E1B9D39B97647AC5D1036 /* CoverageEditorView.swift */,
 				D2C52D25EF274212CBAA9542 /* CoverageViews.swift */,
+				214960F6D07CA0385D16A736 /* EventFormView.swift */,
 				EF5E3058D20CB4A70E6BC1B0 /* ItemDetailView.swift */,
 				73421D5689D63175043399B7 /* ItemFormModel.swift */,
 				01B1B537A5DF2A06053D3987 /* ItemFormView.swift */,
@@ -188,6 +195,7 @@
 				DD7EC433979497943F188B5A /* ReminderPlanner.swift */,
 				9AAE213172AA165B3DEAC637 /* ReminderSync.swift */,
 				1517B1B1B3451BFA61630B6F /* RightsCopy.swift */,
+				F7A61D8F72FF87F4ED0F64E5 /* VaultExport.swift */,
 				C4828D438602EE97E35A9770 /* WarrantyEngine.swift */,
 			);
 			path = Support;
@@ -212,6 +220,7 @@
 				B38A3E64C157E65E05FEA289 /* ModelSmokeTests.swift */,
 				EB8A9BE2235264575AE3D012 /* ReceiptTests.swift */,
 				0531CC5AA0F2050536A6997D /* RightsCopyTests.swift */,
+				87CCFB04E4E75C3269449CC6 /* VaultExportTests.swift */,
 			);
 			path = CoverkeepTests;
 			sourceTree = "<group>";
@@ -355,6 +364,7 @@
 				B1E5E1FF540D51011ACF45DC /* ModelSmokeTests.swift in Sources */,
 				30CAD2E55595858076E3D4E6 /* ReceiptTests.swift in Sources */,
 				BA0443992BC6D58F194D5EB1 /* RightsCopyTests.swift in Sources */,
+				AE77C54E1FC9EA970E8B00FD /* VaultExportTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +381,7 @@
 				6B663F7B905E407C62530FFF /* Dashboard.swift in Sources */,
 				CEAE3A9EDE7E35F3EFC88FD7 /* DeadlineStatus.swift in Sources */,
 				CDCB6ABE7AA6499F01B9F0C1 /* Event.swift in Sources */,
+				B7FF9A64A1AC2E2C74397B04 /* EventFormView.swift in Sources */,
 				FED38C8076DA77A5F5E105AE /* Item.swift in Sources */,
 				3A91277811594A3322C1D37E /* ItemCategory.swift in Sources */,
 				89879855128744A7C7B334E1 /* ItemDetailView.swift in Sources */,
@@ -388,6 +399,7 @@
 				BAC178B12CB30F2C2EFA2670 /* ReminderPlanner.swift in Sources */,
 				5243C846F3A96FB93A3D015C /* ReminderSync.swift in Sources */,
 				8627EEA2E63E09546C6D7119 /* RightsCopy.swift in Sources */,
+				CA08B0B4B0B45240A0E468DA /* VaultExport.swift in Sources */,
 				9135794686C029A5CAE41AC4 /* WarrantyEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
