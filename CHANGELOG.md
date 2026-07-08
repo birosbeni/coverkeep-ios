@@ -2,6 +2,32 @@
 
 All notable changes to Coverkeep, one entry per vertical slice.
 
+## Pre-flight (2026-07-08)
+
+Same audit as Sawkeep and Realmkeep before the freeze:
+
+- **Namespace**: every identifier is personal —
+  `com.birosbenedek.coverkeep` bundle ID, `.pro.*` product IDs; no
+  employer-derived prefixes anywhere (grep-verified).
+- **Compliance**: `PrivacyInfo.xcprivacy` (no tracking, no collected
+  data, UserDefaults required-reason CA92.1 — the only required-reason
+  API in use), `ITSAppUsesNonExemptEncryption = NO`, localized camera
+  usage description, privacy/terms placeholder links at
+  `https://coverkeep.app/{privacy,terms}` in Settings and the paywall.
+- **Bundle audit**: only the four vetted rule files ship (debug/test
+  duplicates are packaging artifacts absent from release archives); no
+  `.storekit` file in the bundle (scheme-only); `en.lproj` + `hu.lproj`
+  present.
+- **Destructive-action audit**: confirmations on item delete (list and
+  detail) and — added in this pass — on receipt delete, whose cascade
+  destroys the archival pages. Coverage/event deletes stay one-swipe
+  (recomputable or low-stakes).
+- **Copy audit**: one stale string found and fixed in Slice 8 (reminder
+  footer); disclaimer present under every rights list.
+- 101 tests green (50 WarrantyRules + 51 app). **Code frozen** until the
+  owner's Developer enrollment lands (then: Slice 5 CloudKit in one
+  pass) and the receipt corpus exists (then: Slice 7, Phase A only).
+
 ## Slice 8 — TestFlight polish (2026-07-08)
 
 Slice 7 (OCR/AI capture) remains 🔒 hard-gated on the owner's receipt

@@ -439,12 +439,32 @@
         }
       }
     },
+    "Delete Receipt": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nyugta törlése"
+          }
+        }
+      }
+    },
     "Delete this item and everything attached to it?": {
       "localizations": {
         "hu": {
           "stringUnit": {
             "state": "translated",
             "value": "Törlöd ezt a tételt mindennel együtt, ami hozzá tartozik?"
+          }
+        }
+      }
+    },
+    "Delete this receipt? The archived pages are gone for good.": {
+      "localizations": {
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Törlöd ezt a nyugtát? Az archivált oldalak végleg elvesznek."
           }
         }
       }

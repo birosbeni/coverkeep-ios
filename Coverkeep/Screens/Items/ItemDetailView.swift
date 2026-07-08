@@ -23,6 +23,7 @@ struct ItemDetailView: View {
     @State private var addingEvent = false
     @State private var editingEvent: Event?
     @State private var viewedAttachmentEvent: Event?
+    @State private var pendingReceiptDeletion: Receipt?
 
     private var sortedCoverages: [Coverage] {
         (item.coverages ?? []).sorted { $0.endDate < $1.endDate }
@@ -98,6 +99,21 @@ struct ItemDetailView: View {
                     files: [QuickLookFile(fileName: draft.fileName, kind: draft.kind, data: draft.data)]
                 )
                 .ignoresSafeArea()
+            }
+        }
+        .confirmationDialog(
+            "Delete this receipt? The archived pages are gone for good.",
+            isPresented: .init(
+                get: { pendingReceiptDeletion != nil },
+                set: { if !$0 { pendingReceiptDeletion = nil } }
+            ),
+            titleVisibility: .visible
+        ) {
+            Button("Delete Receipt", role: .destructive) {
+                if let receipt = pendingReceiptDeletion {
+                    modelContext.delete(receipt)
+                }
+                pendingReceiptDeletion = nil
             }
         }
         .confirmationDialog(
@@ -184,7 +200,7 @@ struct ItemDetailView: View {
                                     editingReceipt = receipt
                                 }
                                 Button("Delete", systemImage: "trash", role: .destructive) {
-                                    modelContext.delete(receipt)
+                                    pendingReceiptDeletion = receipt
                                 }
                             }
                         }

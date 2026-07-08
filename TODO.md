@@ -13,6 +13,10 @@ owner-vetted as of 2026-07-07 and FROZEN. Any content change (durations,
 thresholds, clocks, sources, re-verification bumps) requires the owner's
 explicit sign-off, recorded as an Owner item here before the edit is made.
 
+**Freeze (2026-07-08):** code is frozen after the pre-flight audit. The two
+tracks that reopen it: (1) owner's Developer enrollment → Slice 5 CloudKit
+in one pass; (2) owner's receipt corpus → Slice 7 Phase A measurement only.
+
 ## Code (Claude)
 
 - [ ] Slice 5 — CloudKit private-database sync — **deferred by owner
